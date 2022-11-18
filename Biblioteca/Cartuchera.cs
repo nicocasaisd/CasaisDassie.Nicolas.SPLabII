@@ -13,14 +13,15 @@ namespace Biblioteca
 
     public class Cartuchera<T> where T : Util
     {
-
+        private int id_cartuchera;
         private int capacidad;
         private List<T> listaElementos;
 
         public event DelegadoPrecio EventoPrecio;
 
-        public Cartuchera(int capacidad)
+        public Cartuchera(int id_cartuchera, int capacidad)
         {
+            this.id_cartuchera = id_cartuchera;
             this.capacidad = capacidad;
             listaElementos = new List<T>();
         }
