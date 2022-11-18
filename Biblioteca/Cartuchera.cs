@@ -76,11 +76,14 @@ namespace Biblioteca
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            sb.AppendLine("------------------------------------------");
             foreach(Util item in ListaElementos)
             {
                 sb.AppendLine(item.ToString());
             }
-            sb.AppendLine($"Precio Total: ${PrecioTotal:#.00}");
+            sb.AppendLine($"      *** Precio Total: ${PrecioTotal:#.00} ***");
+            sb.AppendLine("------------------------------------------");
+
             return sb.ToString();
         }
 

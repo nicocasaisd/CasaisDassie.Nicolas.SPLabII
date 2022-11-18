@@ -25,7 +25,7 @@ namespace Consola
 
             try
             {
-                //UtilesDAO.GuardarUtil(1, new Lapiz(0, "Prueba Util", 1, EColorLapiz.Azul, true));
+                //UtilesDAO.GuardarUtil(1, new Lapiz(0, "Prueba Util", 1000, EColorLapiz.Azul, true));
                 //UtilesDAO.GuardarUtil(1, new Goma(0, "PruebaGoma", 1, false));
                 //UtilesDAO.GuardarUtil(1, new Sacapunta(0, "PruebaSacapunta", 1, EMaterialSacapunta.Plastico));
 
@@ -37,7 +37,11 @@ namespace Consola
                 Console.WriteLine(ex.StackTrace);
             }
 
-            Console.WriteLine(cartuchera);
+            //cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
+
+            //Console.WriteLine(cartuchera);
+
+            TicketWriter.EscribirTicket(cartuchera);
         }
     }
 }
