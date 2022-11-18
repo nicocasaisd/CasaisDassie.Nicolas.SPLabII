@@ -11,6 +11,8 @@ namespace Persistencia
     public static class TicketWriter
     {
         static string archivo = "tickets.txt";
+        static string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        static string rutaCompleta = Path.Combine(ruta, archivo);
 
         public static void EscribirTicket(Cartuchera<Util> cartuchera)
         {
@@ -18,9 +20,9 @@ namespace Persistencia
 
             try
             {
-                sw = new StreamWriter(archivo, true);
-                sw.WriteLine("Prueba");
-
+                sw = new StreamWriter(rutaCompleta, true);
+                sw.WriteLine(DateTime.Now);
+                sw.WriteLine(cartuchera);
             }
             catch (Exception)
             {
