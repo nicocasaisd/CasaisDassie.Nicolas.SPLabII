@@ -8,11 +8,16 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
+
+    public delegate void DelegadoPrecio(object sender, EventArgs e);
+
     public class Cartuchera<T> where T : Util
     {
 
         private int capacidad;
         private List<T> listaElementos;
+
+        public event DelegadoPrecio EventoPrecio;
 
         public Cartuchera(int capacidad)
         {
@@ -32,6 +37,7 @@ namespace Biblioteca
             {
                 total += item.Precio * item.Cantidad;
             }
+            // Evento precio
             return total;
         }
 
@@ -49,4 +55,6 @@ namespace Biblioteca
         }
 
     }
+
+    
 }
