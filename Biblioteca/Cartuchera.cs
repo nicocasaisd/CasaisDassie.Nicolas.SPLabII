@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Biblioteca
 {
 
@@ -66,9 +67,21 @@ namespace Biblioteca
             }
             else
             {
+                //UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 cartuchera.listaElementos.Add(elemento);
             }
             return false;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(Util item in ListaElementos)
+            {
+                sb.AppendLine(item.ToString());
+            }
+            sb.AppendLine($"Precio Total: ${PrecioTotal:#.00}");
+            return sb.ToString();
         }
 
     }

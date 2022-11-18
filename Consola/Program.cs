@@ -37,6 +37,7 @@ namespace Consola
                 Console.WriteLine(ex.StackTrace);
             }
 
+            Console.WriteLine(cartuchera);
         }
     }
 }
