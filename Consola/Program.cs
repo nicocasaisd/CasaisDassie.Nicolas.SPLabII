@@ -37,7 +37,7 @@ namespace Consola
                 Console.WriteLine(ex.StackTrace);
             }
 
-            //cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
+            cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
 
             //Console.WriteLine(cartuchera);
 
