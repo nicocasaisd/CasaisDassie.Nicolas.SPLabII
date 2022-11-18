@@ -17,12 +17,26 @@ namespace Consola
             //{
             //    cartuchera.ListaElementos.Add(item);
             //}
-            foreach(Util item in cartuchera.ListaElementos)
+            //foreach (Util item in cartuchera.ListaElementos)
+            //{
+            //    Console.WriteLine(item.ToString());
+            //}
+            //Console.WriteLine($"Precio Total: {cartuchera.PrecioTotal}");
+
+            try
             {
-                Console.WriteLine(item.ToString());
+                //UtilesDAO.GuardarLapiz(1, new Lapiz(0, "Prueba", 1, EColorLapiz.Azul, true));
+                //UtilesDAO.GuardarGoma(1, new Goma(0, "PruebaGoma", 1, false));
+                //UtilesDAO.GuardarSacapunta(1, new Sacapunta(0, "PruebaSacapunta", 1, EMaterialSacapunta.Plastico));
+
             }
-            Console.WriteLine($"Precio Total: {cartuchera.PrecioTotal}");
-        
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+
         }
     }
 }

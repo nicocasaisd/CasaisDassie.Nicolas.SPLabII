@@ -10,9 +10,9 @@ namespace Persistencia
 {
     public static class UtilesDAO
     {
-        public static string cadenaConexion;
-        public static SqlCommand comando;
-        public static SqlConnection conexion;
+        private static string cadenaConexion;
+        private static SqlCommand comando;
+        private static SqlConnection conexion;
 
         static UtilesDAO()
         {
@@ -136,6 +136,95 @@ namespace Persistencia
 
             return listaSacapuntas;
         }
+
+        public static void GuardarLapiz(int id_cartuchera, Lapiz lapiz)
+        {
+
+            try
+            {
+                conexion.Open();
+                comando.CommandText = $"INSERT INTO LAPICES\r\nVALUES({id_cartuchera},@marca,@precio,@colorInt,@esMecanico);";
+                comando.Parameters.AddWithValue("@marca", lapiz.Marca);
+                comando.Parameters.AddWithValue("@precio", lapiz.Precio);
+                comando.Parameters.AddWithValue("@colorInt", (int)lapiz.Color);
+                comando.Parameters.AddWithValue("@esMecanico", lapiz.EsMecanico);
+                
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+        }
+
+        public static void GuardarGoma(int id_cartuchera, Goma goma)
+        {
+
+            try
+            {
+                conexion.Open();
+                comando.CommandText = $"INSERT INTO GOMAS\r\nVALUES({id_cartuchera},@marca,@precio,@esBorraTinta);";
+                comando.Parameters.AddWithValue("@marca", goma.Marca);
+                comando.Parameters.AddWithValue("@precio", goma.Precio);
+                comando.Parameters.AddWithValue("@esBorraTinta", goma.EsBorraTinta);
+
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+        }
+
+        public static void GuardarSacapunta(int id_cartuchera, Sacapunta sacapunta)
+        {
+
+            try
+            {
+                conexion.Open();
+                comando.CommandText = $"INSERT INTO SACAPUNTAS\r\nVALUES({id_cartuchera},@marca,@precio,@material);";
+                comando.Parameters.AddWithValue("@marca", sacapunta.Marca);
+                comando.Parameters.AddWithValue("@precio", sacapunta.Precio);
+                comando.Parameters.AddWithValue("@material", sacapunta.Material);
+
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+        }
+
 
     }
 }

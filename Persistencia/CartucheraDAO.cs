@@ -8,9 +8,9 @@ namespace Persistencia
 {
     public static class CartucheraDAO
     {
-        public static string cadenaConexion;
-        public static SqlCommand comando;
-        public static SqlConnection conexion;
+        private static string cadenaConexion;
+        private static SqlCommand comando;
+        private static SqlConnection conexion;
 
         static CartucheraDAO()
         {
