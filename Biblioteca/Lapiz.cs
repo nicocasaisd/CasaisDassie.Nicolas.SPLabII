@@ -15,16 +15,20 @@ namespace Biblioteca
         private ColorLapiz color;
         private bool esMecanico;
 
-        
-
-        public Lapiz(int id, string nombre, decimal precio) : base(id, nombre, precio)
-        {
-            this.tipo = ETipoDeUtil.Lapiz;
-        }
-        public Lapiz(int id, string nombre, decimal precio, ColorLapiz color=ColorLapiz.Rojo, bool esMecanico=false) : this(id,nombre,precio)
+        public Lapiz(int id, string nombre, decimal precio, ColorLapiz color, bool esMecanico) : base(id,nombre,precio)
         {
             this.color = color;
             this.esMecanico = esMecanico;
+        }
+
+        public ColorLapiz Color
+        {
+            get { return color; }
+        }
+
+        public bool EsMecanico
+        {
+            get { return esMecanico; }
         }
 
     }

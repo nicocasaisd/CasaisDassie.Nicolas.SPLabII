@@ -36,7 +36,7 @@ namespace Biblioteca
             decimal total = 0;
             foreach(T item in lista)
             {
-                total += item.Precio * item.Cantidad;
+                total += item.Precio;
             }
             // Evento precio
             if(EventoPrecio is not null && total >= 500)
