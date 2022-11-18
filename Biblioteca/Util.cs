@@ -11,22 +11,22 @@ namespace Biblioteca
     {
         private int id;
         protected ETipoDeUtil tipo;
-        private string nombre;
+        private string marca;
         private decimal precio;
 
-        protected Util(int id, string nombre, decimal precio)
+        protected Util(int id, string marca, decimal precio)
         {
             this.id = id;
-            this.nombre = nombre;
+            this.marca = marca;
             this.precio = precio;
         }
 
         public int Id { get { return id; } }
 
-        public string Nombre
+        public string Marca
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return marca; }
+            set { marca = value; }
         }
         public decimal Precio 
         { 

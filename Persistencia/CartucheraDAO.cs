@@ -1,6 +1,8 @@
 ﻿using Biblioteca;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace Persistencia
 {
@@ -44,10 +46,40 @@ namespace Persistencia
 
                 throw;
             }
+            finally
+            {
+                if(conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
 
             return cartuchera;
         }
 
+        public static List<Lapiz> LeerLapices(int id_cartuchera)
+        {
+            List<Lapiz> listaLapices = new List<Lapiz>();
+            SqlDataReader lector;
+
+            comando.CommandText = $"SELECT * FROM LAPICES WHERE ID_CARTUCHERA={id_cartuchera};";
+            lector = comando.ExecuteReader();
+
+            while(lector.Read())
+            {
+                int id = (int) lector["ID"];
+                string marca = lector["MARCA"].ToString();
+                decimal precio = (decimal) lector["PRECIO"];
+                ColorLapiz color = (ColorLapiz)lector["COLOR"];
+                bool esMecanico = (bool)lector["ES_MECANICO"];
+
+                Lapiz lapiz = new Lapiz(id, marca, precio, color, esMecanico);
+                listaLapices.Add(lapiz);
+            }
+
+
+            return listaLapices;
+        }
 
 
 

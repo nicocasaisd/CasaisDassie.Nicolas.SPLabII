@@ -29,6 +29,15 @@ namespace Biblioteca
             listaElementos = new List<T>();
         }
 
+        public int Id_Cartuchera
+        {
+            get { return this.id_cartuchera; }
+        }
+
+        public List<T> ListaElementos
+        {
+            get { return this.listaElementos; }
+        }
         public decimal PrecioTotal
         {
             get { return CalcularPrecioTotal(listaElementos); }

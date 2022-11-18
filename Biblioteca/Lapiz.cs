@@ -15,7 +15,7 @@ namespace Biblioteca
         private ColorLapiz color;
         private bool esMecanico;
 
-        public Lapiz(int id, string nombre, decimal precio, ColorLapiz color, bool esMecanico) : base(id,nombre,precio)
+        public Lapiz(int id, string marca, decimal precio, ColorLapiz color, bool esMecanico) : base(id,marca,precio)
         {
             this.color = color;
             this.esMecanico = esMecanico;

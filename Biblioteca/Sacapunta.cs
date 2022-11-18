@@ -11,7 +11,7 @@ namespace Biblioteca
     {
         EMaterialSacapunta material;
 
-        public Sacapunta(int id, string nombre, decimal precio, EMaterialSacapunta material) : base(id, nombre, precio)
+        public Sacapunta(int id, string marca, decimal precio, EMaterialSacapunta material) : base(id, marca, precio)
         {
             this.material = material;
             // defino tipo
