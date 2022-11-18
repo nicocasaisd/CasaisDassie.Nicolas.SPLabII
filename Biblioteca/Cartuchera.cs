@@ -37,7 +37,14 @@ namespace Biblioteca
 
         public static bool operator +(Cartuchera<T> cartuchera, T elemento)
         {
-            
+            if(cartuchera.listaElementos.Count == cartuchera.capacidad)
+            {
+                throw new CartucheraLlenaException("La cartuchera está llena.");
+            }
+            else
+            {
+                cartuchera.listaElementos.Add(elemento);
+            }
             return false;
         }
 
