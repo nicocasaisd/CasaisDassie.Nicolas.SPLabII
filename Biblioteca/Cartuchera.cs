@@ -19,7 +19,10 @@ namespace Biblioteca
 
         public event DelegadoPrecio EventoPrecio;
 
-        public Cartuchera(int id_cartuchera, int capacidad)
+        public Cartuchera()
+        {}
+
+        public Cartuchera(int id_cartuchera, int capacidad) :this()
         {
             this.id_cartuchera = id_cartuchera;
             this.capacidad = capacidad;
