@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,7 +22,23 @@ namespace Biblioteca
 
         public decimal PrecioTotal
         {
-            get { return 0; }
+            get { return CalcularPrecioTotal(listaElementos); }
+        }
+
+        private decimal CalcularPrecioTotal(List<T> lista)
+        {
+            decimal total = 0;
+            foreach(T item in lista)
+            {
+                total += item.Precio * item.Cantidad;
+            }
+            return total;
+        }
+
+        public static bool operator +(Cartuchera<T> cartuchera, T elemento)
+        {
+            
+            return false;
         }
 
     }
