@@ -8,8 +8,12 @@ namespace Biblioteca
 {
     public class Goma : Util
     {
-        public Goma(int id, string nombre, decimal precio) : base(id, nombre, precio)
+        private bool esBorraTinta;
+
+        public Goma(int id, string nombre, decimal precio, bool esBorraTinta) : base(id, nombre, precio)
         {
+            this.esBorraTinta = esBorraTinta;
+            // defino tipo
             this.tipo = ETipoDeUtil.Goma;
         }
     }
