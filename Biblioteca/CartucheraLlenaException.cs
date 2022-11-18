@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Lapiz : Util
+    public class CartucheraLlenaException : Exception
     {
+        public CartucheraLlenaException(string mensaje) : base(mensaje)
+        {
 
+        }
     }
 }
