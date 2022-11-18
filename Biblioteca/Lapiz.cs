@@ -19,7 +19,10 @@ namespace Biblioteca
         {
             this.color = color;
             this.esMecanico = esMecanico;
+            // defino tipo
+            this.tipo = ETipoDeUtil.Lapiz;
         }
+
 
         public ColorLapiz Color
         {
