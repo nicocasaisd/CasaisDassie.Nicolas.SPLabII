@@ -38,6 +38,10 @@ namespace Biblioteca
                 total += item.Precio * item.Cantidad;
             }
             // Evento precio
+            if(EventoPrecio is not null && total >= 500)
+            {
+                EventoPrecio.Invoke(this, new EventArgs());
+            }
             return total;
         }
 
