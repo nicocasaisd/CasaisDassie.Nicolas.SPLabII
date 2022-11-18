@@ -35,11 +35,15 @@ namespace Persistencia
 
                 while(lector.Read())
                 {
-                    int id = (int) lector["ID_CARTUCHERA"];
+                    int id = (int)lector["ID_CARTUCHERA"];
                     int capacidad = (int)lector["CAPACIDAD"];
 
                     cartuchera = new Cartuchera<Util>(id, capacidad);
+                    CargarLapicesEnCartuchera(cartuchera);
+                    CargarGomasEnCartuchera(cartuchera);
+                    CargarSacapuntasEnCartuchera(cartuchera);
                 }
+
             }
             catch (Exception)
             {
@@ -57,30 +61,31 @@ namespace Persistencia
             return cartuchera;
         }
 
-        public static List<Lapiz> LeerLapices(int id_cartuchera)
+        
+
+        private static void CargarLapicesEnCartuchera(Cartuchera<Util> cartuchera)
         {
-            List<Lapiz> listaLapices = new List<Lapiz>();
-            SqlDataReader lector;
-
-            comando.CommandText = $"SELECT * FROM LAPICES WHERE ID_CARTUCHERA={id_cartuchera};";
-            lector = comando.ExecuteReader();
-
-            while(lector.Read())
+            foreach (Util item in UtilesDAO.LeerLapices(cartuchera.Id_Cartuchera))
             {
-                int id = (int) lector["ID"];
-                string marca = lector["MARCA"].ToString();
-                decimal precio = (decimal) lector["PRECIO"];
-                ColorLapiz color = (ColorLapiz)lector["COLOR"];
-                bool esMecanico = (bool)lector["ES_MECANICO"];
-
-                Lapiz lapiz = new Lapiz(id, marca, precio, color, esMecanico);
-                listaLapices.Add(lapiz);
+                cartuchera.ListaElementos.Add(item);
             }
-
-
-            return listaLapices;
         }
 
+        private static void CargarGomasEnCartuchera(Cartuchera<Util> cartuchera)
+        {
+            foreach (Util item in UtilesDAO.LeerGomas(cartuchera.Id_Cartuchera))
+            {
+                cartuchera.ListaElementos.Add(item);
+            }
+        }
+
+        private static void CargarSacapuntasEnCartuchera(Cartuchera<Util> cartuchera)
+        {
+            foreach (Util item in UtilesDAO.LeerSacapuntas(cartuchera.Id_Cartuchera))
+            {
+                cartuchera.ListaElementos.Add(item);
+            }
+        }
 
 
     }

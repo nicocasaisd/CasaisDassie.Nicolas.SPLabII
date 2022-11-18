@@ -16,5 +16,15 @@ namespace Biblioteca
             // defino tipo
             this.tipo = ETipoDeUtil.Goma;
         }
+
+        public bool EsBorraTinta
+        {
+            get { return esBorraTinta; }
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Id}, {this.Marca}, {this.Precio}, {this.EsBorraTinta}";
+        }
     }
 }
