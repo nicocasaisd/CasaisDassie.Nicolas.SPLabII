@@ -8,6 +8,9 @@ namespace Biblioteca
 {
     public class Lapiz : Util
     {
-
+        public Lapiz(int id, string nombre, decimal precio) : base(id, nombre, precio)
+        {
+            this.tipo = ETipoDeUtil.Lapiz;
+        }
     }
 }
