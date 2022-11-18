@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public static class TicketWriter
+    public static class TicketManager
     {
         static string archivo = "tickets.txt";
         static string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -35,6 +35,11 @@ namespace Persistencia
                     sw.Close();
                 }
             }
+        }
+
+        public static string LeerTicket()
+        {
+            return "";
         }
     }
 }

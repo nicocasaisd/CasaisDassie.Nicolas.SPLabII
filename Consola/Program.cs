@@ -41,7 +41,7 @@ namespace Consola
 
             //Console.WriteLine(cartuchera);
 
-            TicketWriter.EscribirTicket(cartuchera);
+            TicketManager.EscribirTicket(cartuchera);
         }
     }
 }
