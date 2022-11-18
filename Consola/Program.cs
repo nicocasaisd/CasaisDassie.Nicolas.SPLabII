@@ -25,9 +25,9 @@ namespace Consola
 
             try
             {
-                //UtilesDAO.GuardarLapiz(1, new Lapiz(0, "Prueba", 1, EColorLapiz.Azul, true));
-                //UtilesDAO.GuardarGoma(1, new Goma(0, "PruebaGoma", 1, false));
-                //UtilesDAO.GuardarSacapunta(1, new Sacapunta(0, "PruebaSacapunta", 1, EMaterialSacapunta.Plastico));
+                //UtilesDAO.GuardarUtil(1, new Lapiz(0, "Prueba Util", 1, EColorLapiz.Azul, true));
+                //UtilesDAO.GuardarUtil(1, new Goma(0, "PruebaGoma", 1, false));
+                //UtilesDAO.GuardarUtil(1, new Sacapunta(0, "PruebaSacapunta", 1, EMaterialSacapunta.Plastico));
 
             }
             catch (Exception ex)

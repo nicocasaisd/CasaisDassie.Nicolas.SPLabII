@@ -137,46 +137,38 @@ namespace Persistencia
             return listaSacapuntas;
         }
 
-        public static void GuardarLapiz(int id_cartuchera, Lapiz lapiz)
+        public static void GuardarUtil(int id_cartuchera, Util util)
         {
 
             try
             {
                 conexion.Open();
-                comando.CommandText = $"INSERT INTO LAPICES\r\nVALUES({id_cartuchera},@marca,@precio,@colorInt,@esMecanico);";
-                comando.Parameters.AddWithValue("@marca", lapiz.Marca);
-                comando.Parameters.AddWithValue("@precio", lapiz.Precio);
-                comando.Parameters.AddWithValue("@colorInt", (int)lapiz.Color);
-                comando.Parameters.AddWithValue("@esMecanico", lapiz.EsMecanico);
+                if(util is Lapiz)
+                {
+                    Lapiz lapiz = (Lapiz)util;
+                    comando.CommandText = $"INSERT INTO LAPICES\r\nVALUES({id_cartuchera},@marca,@precio,@colorInt,@esMecanico);";
+                    comando.Parameters.AddWithValue("@marca", lapiz.Marca);
+                    comando.Parameters.AddWithValue("@precio", lapiz.Precio);
+                    comando.Parameters.AddWithValue("@colorInt", (int)lapiz.Color);
+                    comando.Parameters.AddWithValue("@esMecanico", lapiz.EsMecanico);
+                }
+                else if(util is Goma)
+                {
+                    Goma goma = (Goma)util;
+                    comando.CommandText = $"INSERT INTO GOMAS\r\nVALUES({id_cartuchera},@marca,@precio,@esBorraTinta);";
+                    comando.Parameters.AddWithValue("@marca", goma.Marca);
+                    comando.Parameters.AddWithValue("@precio", goma.Precio);
+                    comando.Parameters.AddWithValue("@esBorraTinta", goma.EsBorraTinta);
+                }
+                else if(util is Sacapunta)
+                {
+                    Sacapunta sacapunta = (Sacapunta)util;
+                    comando.CommandText = $"INSERT INTO SACAPUNTAS\r\nVALUES({id_cartuchera},@marca,@precio,@material);";
+                    comando.Parameters.AddWithValue("@marca", sacapunta.Marca);
+                    comando.Parameters.AddWithValue("@precio", sacapunta.Precio);
+                    comando.Parameters.AddWithValue("@material", sacapunta.Material);
+                }
                 
-                comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conexion.State == System.Data.ConnectionState.Open)
-                {
-                    conexion.Close();
-                }
-            }
-
-        }
-
-        public static void GuardarGoma(int id_cartuchera, Goma goma)
-        {
-
-            try
-            {
-                conexion.Open();
-                comando.CommandText = $"INSERT INTO GOMAS\r\nVALUES({id_cartuchera},@marca,@precio,@esBorraTinta);";
-                comando.Parameters.AddWithValue("@marca", goma.Marca);
-                comando.Parameters.AddWithValue("@precio", goma.Precio);
-                comando.Parameters.AddWithValue("@esBorraTinta", goma.EsBorraTinta);
 
                 comando.ExecuteNonQuery();
                 comando.Parameters.Clear();
@@ -196,34 +188,6 @@ namespace Persistencia
 
         }
 
-        public static void GuardarSacapunta(int id_cartuchera, Sacapunta sacapunta)
-        {
-
-            try
-            {
-                conexion.Open();
-                comando.CommandText = $"INSERT INTO SACAPUNTAS\r\nVALUES({id_cartuchera},@marca,@precio,@material);";
-                comando.Parameters.AddWithValue("@marca", sacapunta.Marca);
-                comando.Parameters.AddWithValue("@precio", sacapunta.Precio);
-                comando.Parameters.AddWithValue("@material", sacapunta.Material);
-
-                comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (conexion.State == System.Data.ConnectionState.Open)
-                {
-                    conexion.Close();
-                }
-            }
-
-        }
 
 
     }
