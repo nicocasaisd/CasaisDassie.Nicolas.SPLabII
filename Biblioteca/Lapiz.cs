@@ -51,6 +51,8 @@ namespace Biblioteca
             throw new Exception();
         }
 
+        object IDeserializa.Json() => new object();
+
         void ISerializa.Xml()
         {
             string archivo = "lapiz.xml";
@@ -62,6 +64,11 @@ namespace Biblioteca
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
                 xmlSerializer.Serialize(sw, this);
             }
+        }
+
+        object IDeserializa.Xml()
+        {
+            return new object();
         }
     }
 }
