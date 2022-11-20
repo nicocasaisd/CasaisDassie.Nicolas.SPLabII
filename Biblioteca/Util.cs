@@ -14,7 +14,9 @@ namespace Biblioteca
         private string marca;
         private decimal precio;
 
-        protected Util(int id, string marca, decimal precio)
+        public Util()
+        {}
+        protected Util(int id, string marca, decimal precio) :this()
         {
             this.id = id;
             this.marca = marca;
@@ -32,6 +34,12 @@ namespace Biblioteca
         { 
             get { return precio; } 
             set { precio = value; }
+        }
+
+        public ETipoDeUtil Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
         }
 
 
