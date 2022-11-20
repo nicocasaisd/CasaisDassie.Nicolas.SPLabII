@@ -8,7 +8,7 @@ namespace Interfaces
 {
     public interface ISerializa
     {
-        bool Xml(object obj);
-        bool Json(object obj);
+        void Xml();
+        void Json();
     }
 }

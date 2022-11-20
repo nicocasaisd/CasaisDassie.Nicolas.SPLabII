@@ -1,10 +1,11 @@
 ﻿using Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml.Serialization;
 
 namespace Biblioteca
 {
@@ -12,7 +13,7 @@ namespace Biblioteca
     {
         Rojo = 1, Verde = 2, Azul = 3, Blanco=4, Negro =5, Gris=6
     }
-    public class Lapiz : Util, ISerializa
+    public class Lapiz : Util, ISerializa, IDeserializa
     {
         private EColorLapiz color;
         private bool esMecanico;
@@ -45,14 +46,22 @@ namespace Biblioteca
             return $"{this.Id}, {this.Marca}, {this.Precio}, {this.Color}, {this.EsMecanico}";
         }
 
-        bool ISerializa.Json(object obj)
+        void ISerializa.Json()
         {
-            throw new NotImplementedException();
+            throw new Exception();
         }
 
-        bool ISerializa.Xml(object obj)
+        void ISerializa.Xml()
         {
-            throw new NotImplementedException();
+            string archivo = "lapiz.xml";
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string rutaCompleta = Path.Combine(ruta, archivo);
+
+            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
+                xmlSerializer.Serialize(sw, this);
+            }
         }
     }
 }

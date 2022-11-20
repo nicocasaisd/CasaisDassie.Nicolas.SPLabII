@@ -8,7 +8,7 @@ namespace Interfaces
 {
     public interface IDeserializa
     {
-        string Xml(object obj);
-        string Json(object obj);
+        object Xml();
+        object Json();
     }
 }

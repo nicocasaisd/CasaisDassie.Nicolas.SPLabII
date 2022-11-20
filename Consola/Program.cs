@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Interfaces;
 using Persistencia;
 using System;
 
@@ -41,7 +42,12 @@ namespace Consola
 
             //Console.WriteLine(cartuchera);
 
-            TicketManager.EscribirTicket(cartuchera);
+            //TicketManager.EscribirTicket(cartuchera);
+
+            Lapiz lapiz = new Lapiz(1, "Faber", 100, EColorLapiz.Verde, true);
+            ((ISerializa)lapiz).Xml();
+            Console.ReadKey();
+
         }
     }
 }
