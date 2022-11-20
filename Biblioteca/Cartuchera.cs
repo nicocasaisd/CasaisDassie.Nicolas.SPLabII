@@ -53,11 +53,7 @@ namespace Biblioteca
             {
                 total += item.Precio;
             }
-            // Evento precio
-            if(EventoPrecio is not null && total >= 500)
-            {
-                EventoPrecio.Invoke(this, new EventArgs());
-            }
+            
             return total;
         }
 
@@ -72,6 +68,7 @@ namespace Biblioteca
                 UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 
                 //cartuchera.listaElementos.Add(elemento);
+
             }
             return false;
         }

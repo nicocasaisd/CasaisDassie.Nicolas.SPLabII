@@ -1,6 +1,7 @@
 ﻿using Biblioteca;
+using Biblioteca.Persistencia;
 using Interfaces;
-using Persistencia;
+//using Persistencia;
 using System;
 
 namespace Consola
