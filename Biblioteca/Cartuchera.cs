@@ -1,4 +1,5 @@
 ﻿
+using Biblioteca.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,9 +69,9 @@ namespace Biblioteca
             }
             else
             {
-                //UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
+                UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 
-                cartuchera.listaElementos.Add(elemento);
+                //cartuchera.listaElementos.Add(elemento);
             }
             return false;
         }
