@@ -59,16 +59,25 @@ namespace Biblioteca
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string rutaCompleta = Path.Combine(ruta, archivo);
 
-            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            using (StreamWriter writer = new StreamWriter(rutaCompleta))
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
-                xmlSerializer.Serialize(sw, this);
+                xmlSerializer.Serialize(writer, this);
             }
         }
 
         object IDeserializa.Xml()
         {
-            return new object();
+            string archivo = "lapiz.xml";
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string rutaCompleta = Path.Combine(ruta, archivo);
+
+            using( StreamReader reader = new StreamReader(rutaCompleta))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
+                Lapiz lapiz = xmlSerializer.Deserialize(reader) as Lapiz;
+                return lapiz;
+            }
         }
     }
 }

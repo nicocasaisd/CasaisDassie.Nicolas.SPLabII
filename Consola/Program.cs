@@ -46,6 +46,10 @@ namespace Consola
 
             Lapiz lapiz = new Lapiz(1, "Faber", 100, EColorLapiz.Verde, true);
             ((ISerializa)lapiz).Xml();
+
+            Lapiz lapizDeserializado = new Lapiz();
+            lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();
+            
             Console.ReadKey();
 
         }
