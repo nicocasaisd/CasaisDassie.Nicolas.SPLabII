@@ -188,6 +188,57 @@ namespace Persistencia
 
         }
 
+        public static void ModificarUtil(Util util)
+        {
+
+            try
+            {
+                conexion.Open();
+                if (util is Lapiz)
+                {
+                    Lapiz lapiz = (Lapiz)util;
+                    comando.CommandText = $"UPDATE LAPICES\r\nSET MARCA='@marca', PRECIO=@precio, COLOR=@colorInt, ES_MECANICO=@esMecanico \r\nWHERE ID={util.Id};";
+                    comando.Parameters.AddWithValue("@marca", lapiz.Marca);
+                    comando.Parameters.AddWithValue("@precio", lapiz.Precio);
+                    comando.Parameters.AddWithValue("@colorInt", (int)lapiz.Color);
+                    comando.Parameters.AddWithValue("@esMecanico", lapiz.EsMecanico);
+                }
+                else if (util is Goma)
+                {
+                    Goma goma = (Goma)util;
+                    comando.CommandText = $"UPDATE GOMAS\r\nSET MARCA='@marca', PRECIO=@precio, ES_BORRATINTA=@esBorraTinta \r\nWHERE ID={util.Id};";
+                    comando.Parameters.AddWithValue("@marca", goma.Marca);
+                    comando.Parameters.AddWithValue("@precio", goma.Precio);
+                    comando.Parameters.AddWithValue("@esBorraTinta", goma.EsBorraTinta);
+                }
+                else if (util is Sacapunta)
+                {
+                    Sacapunta sacapunta = (Sacapunta)util;
+                    comando.CommandText = $"UPDATE SACAPUNTAS\r\nSET MARCA='@marca', PRECIO=@precio, MATERIAL=@material \r\nWHERE ID={util.Id};";
+                    comando.Parameters.AddWithValue("@marca", sacapunta.Marca);
+                    comando.Parameters.AddWithValue("@precio", sacapunta.Precio);
+                    comando.Parameters.AddWithValue("@material", sacapunta.Material);
+                }
+
+
+                comando.ExecuteNonQuery();
+                comando.Parameters.Clear();
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+        }
+
 
 
     }

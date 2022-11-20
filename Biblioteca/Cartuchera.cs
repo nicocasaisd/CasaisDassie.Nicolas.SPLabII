@@ -68,7 +68,7 @@ namespace Biblioteca
                 UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 
                 //cartuchera.listaElementos.Add(elemento);
-
+                
             }
             return false;
         }
