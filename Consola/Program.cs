@@ -45,10 +45,13 @@ namespace Consola
             //TicketManager.EscribirTicket(cartuchera);
 
             Lapiz lapiz = new Lapiz(1, "Faber", 100, EColorLapiz.Verde, true);
-            ((ISerializa)lapiz).Xml();
+            //((ISerializa)lapiz).Xml();
+            ((ISerializa)lapiz).Json();
 
             Lapiz lapizDeserializado = new Lapiz();
-            lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();
+
+            //lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();
+            lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Json();
             
             Console.ReadKey();
 

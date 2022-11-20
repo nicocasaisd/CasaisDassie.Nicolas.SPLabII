@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -48,10 +49,30 @@ namespace Biblioteca
 
         void ISerializa.Json()
         {
-            throw new Exception();
+            string archivo = "lapiz.json";
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string rutaCompleta = Path.Combine(ruta, archivo);
+
+            
+            
+            string jsonString = JsonSerializer.Serialize(this);
+            File.WriteAllText(rutaCompleta, jsonString);    
+            
         }
 
-        object IDeserializa.Json() => new object();
+        object IDeserializa.Json()
+        {
+            string archivo = "lapiz.json";
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string rutaCompleta = Path.Combine(ruta, archivo);
+
+
+
+            string jsonString = File.ReadAllText(rutaCompleta);
+            Lapiz lapiz = JsonSerializer.Deserialize<Lapiz>(jsonString);
+
+            return lapiz;
+        }
 
         void ISerializa.Xml()
         {
