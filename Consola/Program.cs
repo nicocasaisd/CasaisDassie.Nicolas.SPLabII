@@ -44,10 +44,16 @@ namespace Consola
 
             //TicketManager.EscribirTicket(cartuchera);
 
-            Lapiz lapiz = new Lapiz(1, "Faber", 100, EColorLapiz.Verde, true);
+            Lapiz lapiz = new Lapiz(1, "Prueba2", 100, EColorLapiz.Azul, true);
+
+            if(cartuchera + lapiz)
+            {
+                Console.WriteLine("Se agregó correctamente.");
+            }
             //((ISerializa)lapiz).Xml();
             ((ISerializa)lapiz).Json();
 
+            
             Lapiz lapizDeserializado = new Lapiz();
 
             //lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();

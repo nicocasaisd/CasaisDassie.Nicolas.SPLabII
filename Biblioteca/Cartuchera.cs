@@ -19,6 +19,7 @@ namespace Biblioteca
         private List<T> listaElementos;
 
         public event DelegadoPrecio EventoPrecio;
+        //public event Action<int, T> EventoAgregarUtil;
 
         public Cartuchera()
         {}
@@ -68,10 +69,13 @@ namespace Biblioteca
             else
             {
                 //UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
+                
                 cartuchera.listaElementos.Add(elemento);
             }
             return false;
         }
+
+        
 
         public override string ToString()
         {
