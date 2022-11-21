@@ -56,6 +56,7 @@ namespace UI
 
         private void EventoCambioLista_Handler(object sender, EventArgs e)
         {
+            
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
         }
