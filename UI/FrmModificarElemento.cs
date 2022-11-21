@@ -33,6 +33,7 @@ namespace UI
         public FrmModificarElemento(eModificarProductoOpcion opcion, Util util) : this(opcion)
         {
             this.elementoSeleccionado = util;
+            AsignarOpcionesDeUtil(util.Tipo);
         }
 
         private void FrmModificarElemento_Load(object sender, EventArgs e)
@@ -47,6 +48,33 @@ namespace UI
             }
 
 
+        }
+
+        private void AsignarOpcionesDeUtil(ETipoDeUtil tipo)
+        {
+            // Si el util ya existe, asigno los valores de util
+            if (opcion == eModificarProductoOpcion.ModificarProducto)
+            {
+                txt_id.Text = elementoSeleccionado.Id.ToString();
+                txt_marca.Text = elementoSeleccionado.Marca;
+                nud_precio.Value = elementoSeleccionado.Precio;
+            }
+
+                if (tipo == ETipoDeUtil.Lapiz)
+            {
+                lbl_4.Text = "Color:";
+                Array eColor = Enum.GetValues(typeof(EColorLapiz));
+                cmb_4.DataSource = eColor;
+                lbl_5.Text = "Es mecánico?";
+                // Si el util ya existe, asigno los valores de lapiz
+                if (opcion == eModificarProductoOpcion.ModificarProducto)
+                {
+                    Lapiz lapiz = (Lapiz)elementoSeleccionado;
+                    cmb_4.SelectedIndex = (int)lapiz.Color;
+
+
+                }
+            }
         }
     }
 }

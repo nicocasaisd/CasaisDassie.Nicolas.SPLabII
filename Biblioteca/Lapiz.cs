@@ -12,7 +12,7 @@ namespace Biblioteca
 {
     public enum EColorLapiz
     {
-        Rojo = 1, Verde = 2, Azul = 3, Blanco=4, Negro =5, Gris=6
+        Rojo = 0, Verde = 1, Azul = 2, Blanco=3, Negro =4, Gris=5
     }
     public class Lapiz : Util, ISerializa, IDeserializa
     {

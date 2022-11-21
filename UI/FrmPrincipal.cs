@@ -70,7 +70,7 @@ namespace UI
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.ModificarProducto);
+            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.ModificarProducto, elementoSeleccionado);
             frmModificar.ShowDialog();
         }
     }

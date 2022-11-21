@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public enum EMaterialSacapunta { Metal=1, Plastico=2}
+    public enum EMaterialSacapunta { Metal=0, Plastico=1}
     public class Sacapunta : Util
     {
         private EMaterialSacapunta material;
