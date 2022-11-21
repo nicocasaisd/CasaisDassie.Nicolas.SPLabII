@@ -44,10 +44,14 @@ namespace UI
             if(opcion == eModificarProductoOpcion.AgregarProducto)
             {
                 this.Text = "Agregar Util";
+                Array eTipo = Enum.GetValues(typeof(ETipoDeUtil));
+                cmb_tipoDeUtil.DataSource = eTipo;
+
             }
             else
             {
                 this.Text = "Modificar Util";
+                gpb_tipoDeUtil.Visible = false;
             }
 
 
@@ -57,20 +61,21 @@ namespace UI
         {
             if (tipo == ETipoDeUtil.Lapiz)
             {
-                lbl_4.Text = "Color:";
+                lbl_4.Visible = true; lbl_4.Text = "Color:";
+                cmb_4.Visible = true;
                 Array eColor = Enum.GetValues(typeof(EColorLapiz));
                 cmb_4.DataSource = eColor;
-                chb_5.Text = "Es mecánico?";
+                chb_5.Visible = true; chb_5.Text = "Es mecánico?";
             }
             else if (tipo == ETipoDeUtil.Goma)
             {
-                lbl_4.Visible = false;
-                cmb_4.Visible = false;
-                chb_5.Text = "Es borratinta?";
+                lbl_4.Visible = false; cmb_4.Visible = false;
+                chb_5.Visible = true; chb_5.Text = "Es borratinta?";
             }
             else
             {
-                lbl_4.Text = "Material:";
+                lbl_4.Visible = true; lbl_4.Text = "Material:";
+                cmb_4.Visible = true;
                 Array eMaterial = Enum.GetValues(typeof(EMaterialSacapunta));
                 cmb_4.DataSource = eMaterial;
                 chb_5.Visible = false;
@@ -109,7 +114,37 @@ namespace UI
 
         }
 
+        private void cmb_tipoDeUtil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Lapiz)
+            {
+                AsignarOpcionesDeUtil(ETipoDeUtil.Lapiz);
+            }
+            else if(cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
+            {
+                AsignarOpcionesDeUtil(ETipoDeUtil.Goma);
+            }
+            else
+            {
+                AsignarOpcionesDeUtil(ETipoDeUtil.Sacapunta);
+            }
+        }
 
+        private void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            string marca = txt_marca.Text;
+            decimal precio = nud_precio.Value;
 
+            if (opcion == eModificarProductoOpcion.AgregarProducto)
+            {
+
+                if(cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Lapiz)
+                {
+                    EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
+                    bool esMecanico = chb_5.Checked;
+                    Lapiz lapiz = new Lapiz(0, marca, precio,color, esMecanico)
+                }
+            }
+        }
     }
 }

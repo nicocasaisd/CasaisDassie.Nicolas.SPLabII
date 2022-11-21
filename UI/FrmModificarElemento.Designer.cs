@@ -39,7 +39,9 @@
             this.lbl_marca = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
             this.gpb_tipoDeUtil = new System.Windows.Forms.GroupBox();
+            this.cmb_tipoDeUtil = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_Guardar = new System.Windows.Forms.Button();
             this.gpb_Controles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).BeginInit();
             this.gpb_tipoDeUtil.SuspendLayout();
@@ -47,8 +49,7 @@
             // 
             // gpb_Controles
             // 
-            this.gpb_Controles.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gpb_Controles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gpb_Controles.Controls.Add(this.chb_5);
             this.gpb_Controles.Controls.Add(this.cmb_4);
@@ -61,7 +62,7 @@
             this.gpb_Controles.Controls.Add(this.lbl_id);
             this.gpb_Controles.Location = new System.Drawing.Point(12, 57);
             this.gpb_Controles.Name = "gpb_Controles";
-            this.gpb_Controles.Size = new System.Drawing.Size(250, 209);
+            this.gpb_Controles.Size = new System.Drawing.Size(250, 206);
             this.gpb_Controles.TabIndex = 0;
             this.gpb_Controles.TabStop = false;
             // 
@@ -148,12 +149,22 @@
             // 
             // gpb_tipoDeUtil
             // 
+            this.gpb_tipoDeUtil.Controls.Add(this.cmb_tipoDeUtil);
             this.gpb_tipoDeUtil.Controls.Add(this.label1);
             this.gpb_tipoDeUtil.Location = new System.Drawing.Point(12, 3);
             this.gpb_tipoDeUtil.Name = "gpb_tipoDeUtil";
             this.gpb_tipoDeUtil.Size = new System.Drawing.Size(250, 48);
             this.gpb_tipoDeUtil.TabIndex = 1;
             this.gpb_tipoDeUtil.TabStop = false;
+            // 
+            // cmb_tipoDeUtil
+            // 
+            this.cmb_tipoDeUtil.FormattingEnabled = true;
+            this.cmb_tipoDeUtil.Location = new System.Drawing.Point(109, 15);
+            this.cmb_tipoDeUtil.Name = "cmb_tipoDeUtil";
+            this.cmb_tipoDeUtil.Size = new System.Drawing.Size(121, 23);
+            this.cmb_tipoDeUtil.TabIndex = 1;
+            this.cmb_tipoDeUtil.SelectedIndexChanged += new System.EventHandler(this.cmb_tipoDeUtil_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -164,11 +175,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo de útil:";
             // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Location = new System.Drawing.Point(165, 279);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(97, 29);
+            this.btn_Guardar.TabIndex = 2;
+            this.btn_Guardar.Text = "Guardar";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
             // FrmModificarElemento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 278);
+            this.ClientSize = new System.Drawing.Size(274, 320);
+            this.Controls.Add(this.btn_Guardar);
             this.Controls.Add(this.gpb_tipoDeUtil);
             this.Controls.Add(this.gpb_Controles);
             this.Name = "FrmModificarElemento";
@@ -197,5 +219,7 @@
         private System.Windows.Forms.ComboBox cmb_4;
         private System.Windows.Forms.GroupBox gpb_tipoDeUtil;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_tipoDeUtil;
+        private System.Windows.Forms.Button btn_Guardar;
     }
 }
