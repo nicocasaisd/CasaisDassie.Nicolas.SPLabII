@@ -45,12 +45,11 @@ namespace Consola
 
             //TicketManager.EscribirTicket(cartuchera);
 
-            Lapiz lapiz = new Lapiz(1, "Prueba2", 100, EColorLapiz.Azul, true);
+            Lapiz lapiz = new Lapiz(1, "Prueba Consola", 100, EColorLapiz.Azul, true);
 
-            if(cartuchera + lapiz)
-            {
-                Console.WriteLine("Se agregó correctamente.");
-            }
+            _ = cartuchera + lapiz;
+            
+            /*
             //((ISerializa)lapiz).Xml();
             ((ISerializa)lapiz).Json();
 
@@ -59,7 +58,7 @@ namespace Consola
 
             //lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();
             lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Json();
-            
+            */
             Console.ReadKey();
 
         }

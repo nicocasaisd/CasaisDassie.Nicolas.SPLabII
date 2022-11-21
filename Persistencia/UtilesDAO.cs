@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -239,7 +240,31 @@ namespace Persistencia
 
         }
 
+        public static void EliminarPorId(int id_util)
+        {
+            try
+            {
+                conexion.Open();
+                comando.CommandText = $"DELETE LAPICES\r\nWHERE ID={id_util};";
+                if(comando.ExecuteNonQuery() == 0)
+                {
+                    throw new DataAccessObjectException("No se pudo realizar UtilesDAO.EliminarPorId()");
+                }
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                if(conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
 
     }
 }
