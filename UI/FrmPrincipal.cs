@@ -33,18 +33,7 @@ namespace UI
             this.EventoCambioLista += EventoCambioLista_Handler;
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                UtilesDAO.EliminarPorId(elementoSeleccionado.Id);
-                EventoCambioLista.Invoke(cartuchera, new EventArgs());
-            }
-            catch (DataAccessObjectException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void dgv_ListaCartuchera_SelectionChanged(object sender, EventArgs e)
         {
@@ -59,19 +48,41 @@ namespace UI
             
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
+            MessageBox.Show("Cambio realizado en la lista.");
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.AgregarProducto);
+            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera.Id_Cartuchera, eModificarProductoOpcion.AgregarProducto);
             frmModificar.ShowDialog();
+            if (frmModificar.DialogResult == DialogResult.OK)
+            {
+                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+            }
 
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.ModificarProducto, elementoSeleccionado);
+            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera.Id_Cartuchera, eModificarProductoOpcion.ModificarProducto, elementoSeleccionado);
             frmModificar.ShowDialog();
+            if (frmModificar.DialogResult == DialogResult.OK)
+            {
+                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+            }
+           
+        }
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UtilesDAO.EliminarPorId(elementoSeleccionado.Id);
+                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+            }
+            catch (DataAccessObjectException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

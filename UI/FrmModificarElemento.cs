@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,19 +19,22 @@ namespace UI
 
     public partial class FrmModificarElemento : Form
     {
+        int id_cartuchera;
         eModificarProductoOpcion opcion;
         Util elementoSeleccionado;
+        
 
         public FrmModificarElemento()
         {
             InitializeComponent();
         }
 
-        public FrmModificarElemento(eModificarProductoOpcion opcion) :this()
+        public FrmModificarElemento(int id_cartuchera, eModificarProductoOpcion opcion) :this()
         {
+            this.id_cartuchera = id_cartuchera;
             this.opcion = opcion;
         }
-        public FrmModificarElemento(eModificarProductoOpcion opcion, Util util) : this(opcion)
+        public FrmModificarElemento(int id_cartuchera, eModificarProductoOpcion opcion, Util util) : this(id_cartuchera, opcion)
         {
             this.elementoSeleccionado = util;
             AsignarOpcionesDeUtil(util.Tipo);
@@ -142,7 +146,10 @@ namespace UI
                 {
                     EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
                     bool esMecanico = chb_5.Checked;
-                    Lapiz lapiz = new Lapiz(0, marca, precio,color, esMecanico)
+                    Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
+                    UtilesDAO.GuardarUtil(id_cartuchera, lapiz);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
             }
         }
