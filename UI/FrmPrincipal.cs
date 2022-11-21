@@ -60,5 +60,18 @@ namespace UI
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
         }
+
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.AgregarProducto);
+            frmModificar.ShowDialog();
+
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+            FrmModificarElemento frmModificar = new FrmModificarElemento(eModificarProductoOpcion.ModificarProducto);
+            frmModificar.ShowDialog();
+        }
     }
 }

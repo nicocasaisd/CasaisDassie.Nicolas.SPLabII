@@ -31,9 +31,9 @@
             this.gpb_ListaCartuchera = new System.Windows.Forms.GroupBox();
             this.dgv_ListaCartuchera = new System.Windows.Forms.DataGridView();
             this.gpb_Crud = new System.Windows.Forms.GroupBox();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
+            this.btn_Modificar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -81,24 +81,6 @@
             this.gpb_Crud.TabStop = false;
             this.gpb_Crud.Text = "Modificar Lista";
             // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.Location = new System.Drawing.Point(6, 22);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(134, 35);
-            this.btn_Agregar.TabIndex = 0;
-            this.btn_Agregar.Text = "Agregar Util";
-            this.btn_Agregar.UseVisualStyleBackColor = true;
-            // 
-            // btn_Modificar
-            // 
-            this.btn_Modificar.Location = new System.Drawing.Point(146, 22);
-            this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(134, 35);
-            this.btn_Modificar.TabIndex = 1;
-            this.btn_Modificar.Text = "Modificar Util";
-            this.btn_Modificar.UseVisualStyleBackColor = true;
-            // 
             // btn_Eliminar
             // 
             this.btn_Eliminar.Location = new System.Drawing.Point(286, 22);
@@ -108,6 +90,26 @@
             this.btn_Eliminar.Text = "Eliminar Util";
             this.btn_Eliminar.UseVisualStyleBackColor = true;
             this.btn_Eliminar.Click += new System.EventHandler(this.btn_Eliminar_Click);
+            // 
+            // btn_Modificar
+            // 
+            this.btn_Modificar.Location = new System.Drawing.Point(146, 22);
+            this.btn_Modificar.Name = "btn_Modificar";
+            this.btn_Modificar.Size = new System.Drawing.Size(134, 35);
+            this.btn_Modificar.TabIndex = 1;
+            this.btn_Modificar.Text = "Modificar Util";
+            this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.Location = new System.Drawing.Point(6, 22);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(134, 35);
+            this.btn_Agregar.TabIndex = 0;
+            this.btn_Agregar.Text = "Agregar Util";
+            this.btn_Agregar.UseVisualStyleBackColor = true;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // FrmPrincipal
             // 
