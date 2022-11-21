@@ -38,7 +38,18 @@ namespace Biblioteca.Persistencia
 
         public static string LeerTicket()
         {
-            return "";
+            string ticket = String.Empty;
+            try
+            {
+                StreamReader reader = new StreamReader(rutaCompleta);
+                ticket = reader.ReadToEnd();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return ticket;
         }
     }
 }

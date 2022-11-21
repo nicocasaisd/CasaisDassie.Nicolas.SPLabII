@@ -67,8 +67,6 @@ namespace Biblioteca
             {
                 UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 
-                //cartuchera.listaElementos.Add(elemento);
-                
             }
             if(cartuchera.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
             {

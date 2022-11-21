@@ -39,8 +39,8 @@ namespace Consola
                 Console.WriteLine(ex.StackTrace);
             }
 
-            cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
-            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
+            //cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
+            //cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
 
             //Console.WriteLine(cartuchera);
 
@@ -48,7 +48,10 @@ namespace Consola
 
             Lapiz lapiz = new Lapiz(1, "Prueba Consola", 100, EColorLapiz.Azul, true);
 
-            _ = cartuchera + lapiz;
+            //_ = cartuchera + lapiz;
+
+            string ticket = TicketManager.LeerTicket();
+            Console.WriteLine(ticket);
             
             /*
             //((ISerializa)lapiz).Xml();
