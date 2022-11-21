@@ -241,12 +241,24 @@ namespace Biblioteca.Persistencia
 
         }
 
-        public static void EliminarPorId(int id_util)
+        public static void EliminarPorId(Util util)
         {
             try
             {
                 conexion.Open();
-                comando.CommandText = $"DELETE LAPICES\r\nWHERE ID={id_util};";
+                if(util is Lapiz)
+                {
+                    comando.CommandText = $"DELETE LAPICES\r\nWHERE ID={util.Id};";
+                }
+                else if(util is Goma)
+                {
+                    comando.CommandText = $"DELETE GOMAS\r\nWHERE ID={util.Id};";
+                }
+                else if(util is Sacapunta)
+                {
+                    comando.CommandText = $"DELETE SACAPUNTAS\r\nWHERE ID={util.Id};";
+                }
+                // Ejecuto
                 if (comando.ExecuteNonQuery() == 0)
                 {
                     throw new DataAccessObjectException("No se pudo realizar UtilesDAO.EliminarPorId()");
@@ -256,7 +268,6 @@ namespace Biblioteca.Persistencia
             }
             catch (Exception)
             {
-
                 throw;
             }
             finally

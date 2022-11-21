@@ -151,6 +151,22 @@ namespace UI
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
+                {
+                    bool esBorraTinta = chb_5.Checked;
+                    Goma goma = new Goma(0, marca, precio, esBorraTinta);
+                    UtilesDAO.GuardarUtil(id_cartuchera, goma);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
+                {
+                    EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
+                    Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
+                    UtilesDAO.GuardarUtil(id_cartuchera, sacapunta);
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
     }

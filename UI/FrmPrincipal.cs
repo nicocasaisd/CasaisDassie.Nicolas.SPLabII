@@ -74,15 +74,19 @@ namespace UI
         }
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            try
+            if(MessageBox.Show($"Desea eliminar el elemento {elementoSeleccionado.Id},{elementoSeleccionado.Marca} ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                UtilesDAO.EliminarPorId(elementoSeleccionado.Id);
-                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+                try
+                {
+                    UtilesDAO.EliminarPorId(elementoSeleccionado);
+                    EventoCambioLista.Invoke(cartuchera, new EventArgs());
+                }
+                catch (DataAccessObjectException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (DataAccessObjectException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
     }
 }
