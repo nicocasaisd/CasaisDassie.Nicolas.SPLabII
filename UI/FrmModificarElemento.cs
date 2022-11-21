@@ -34,7 +34,10 @@ namespace UI
         {
             this.elementoSeleccionado = util;
             AsignarOpcionesDeUtil(util.Tipo);
+            AsignarValoresDeUtil(util.Tipo);
         }
+
+        
 
         private void FrmModificarElemento_Load(object sender, EventArgs e)
         {
@@ -52,6 +55,31 @@ namespace UI
 
         private void AsignarOpcionesDeUtil(ETipoDeUtil tipo)
         {
+            if (tipo == ETipoDeUtil.Lapiz)
+            {
+                lbl_4.Text = "Color:";
+                Array eColor = Enum.GetValues(typeof(EColorLapiz));
+                cmb_4.DataSource = eColor;
+                lbl_5.Text = "Es mecánico?";
+            }
+            else if (tipo == ETipoDeUtil.Goma)
+            {
+                lbl_4.Visible = false;
+                cmb_4.Visible = false;
+                lbl_5.Text = "Es borratinta?";
+            }
+            else
+            {
+                lbl_4.Visible = false;
+                Array eMaterial = Enum.GetValues(typeof(EMaterialSacapunta));
+                cmb_4.DataSource = eMaterial;
+                lbl_5.Visible = false;
+                chb_5.Visible = false;
+            }
+        }
+
+        private void AsignarValoresDeUtil(ETipoDeUtil tipo)
+        {
             // Si el util ya existe, asigno los valores de util
             if (opcion == eModificarProductoOpcion.ModificarProducto)
             {
@@ -59,22 +87,31 @@ namespace UI
                 txt_marca.Text = elementoSeleccionado.Marca;
                 nud_precio.Value = elementoSeleccionado.Precio;
             }
-
-                if (tipo == ETipoDeUtil.Lapiz)
+            
+            if(tipo == ETipoDeUtil.Lapiz)
             {
-                lbl_4.Text = "Color:";
-                Array eColor = Enum.GetValues(typeof(EColorLapiz));
-                cmb_4.DataSource = eColor;
-                lbl_5.Text = "Es mecánico?";
+                Lapiz lapiz = (Lapiz)elementoSeleccionado;
                 // Si el util ya existe, asigno los valores de lapiz
-                if (opcion == eModificarProductoOpcion.ModificarProducto)
-                {
-                    Lapiz lapiz = (Lapiz)elementoSeleccionado;
-                    cmb_4.SelectedIndex = (int)lapiz.Color;
+                cmb_4.SelectedIndex = (int)lapiz.Color;
+                chb_5.Checked = lapiz.EsMecanico;
 
-
-                }
             }
+            else if(tipo == ETipoDeUtil.Goma)
+            {
+                Goma goma = (Goma)elementoSeleccionado;
+                // Si el util ya existe, asigno los valores de goma
+                chb_5.Checked = goma.EsBorraTinta;
+            }
+            else
+            {
+                Sacapunta sacapunta = (Sacapunta)elementoSeleccionado;
+                // Si el util ya existe, asigno los valores de sacapunta
+
+            }
+
         }
+
+
+
     }
 }
