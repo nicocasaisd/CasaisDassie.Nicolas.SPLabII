@@ -70,6 +70,11 @@ namespace Biblioteca
                 //cartuchera.listaElementos.Add(elemento);
                 
             }
+            if(cartuchera.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
+            {
+                cartuchera.EventoPrecio.Invoke(cartuchera, new EventArgs());
+            }
+
             return false;
         }
 
