@@ -9,7 +9,7 @@ namespace Biblioteca.Persistencia
 {
     public static class TicketManager
     {
-        static string archivo = "tickets.txt";
+        static string archivo = "tickets.log";
         static string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         static string rutaCompleta = Path.Combine(ruta, archivo);
 
