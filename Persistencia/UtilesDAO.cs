@@ -170,10 +170,10 @@ namespace Persistencia
                     comando.Parameters.AddWithValue("@material", sacapunta.Material);
                 }
                 
-
-                comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
-
+                if(comando.ExecuteNonQuery() == 0)
+                {
+                    throw new DataAccessObjectException("No se pudo realizar UtilesDAO.GuardarUtil()");
+                }
             }
             catch (Exception)
             {
@@ -181,6 +181,7 @@ namespace Persistencia
             }
             finally
             {
+                comando.Parameters.Clear();
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
@@ -222,9 +223,10 @@ namespace Persistencia
                 }
 
 
-                comando.ExecuteNonQuery();
-                comando.Parameters.Clear();
-
+                if (comando.ExecuteNonQuery() == 0)
+                {
+                    throw new DataAccessObjectException("No se pudo realizar UtilesDAO.ModificarUtil()");
+                }
             }
             catch (Exception)
             {
@@ -232,6 +234,7 @@ namespace Persistencia
             }
             finally
             {
+                comando.Parameters.Clear();
                 if (conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
