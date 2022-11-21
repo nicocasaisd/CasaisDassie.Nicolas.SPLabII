@@ -60,20 +60,19 @@ namespace UI
                 lbl_4.Text = "Color:";
                 Array eColor = Enum.GetValues(typeof(EColorLapiz));
                 cmb_4.DataSource = eColor;
-                lbl_5.Text = "Es mecánico?";
+                chb_5.Text = "Es mecánico?";
             }
             else if (tipo == ETipoDeUtil.Goma)
             {
                 lbl_4.Visible = false;
                 cmb_4.Visible = false;
-                lbl_5.Text = "Es borratinta?";
+                chb_5.Text = "Es borratinta?";
             }
             else
             {
-                lbl_4.Visible = false;
+                lbl_4.Text = "Material:";
                 Array eMaterial = Enum.GetValues(typeof(EMaterialSacapunta));
                 cmb_4.DataSource = eMaterial;
-                lbl_5.Visible = false;
                 chb_5.Visible = false;
             }
         }
@@ -94,7 +93,6 @@ namespace UI
                 // Si el util ya existe, asigno los valores de lapiz
                 cmb_4.SelectedIndex = (int)lapiz.Color;
                 chb_5.Checked = lapiz.EsMecanico;
-
             }
             else if(tipo == ETipoDeUtil.Goma)
             {
@@ -106,7 +104,7 @@ namespace UI
             {
                 Sacapunta sacapunta = (Sacapunta)elementoSeleccionado;
                 // Si el util ya existe, asigno los valores de sacapunta
-
+                cmb_4.SelectedIndex = (int)sacapunta.Material;
             }
 
         }
