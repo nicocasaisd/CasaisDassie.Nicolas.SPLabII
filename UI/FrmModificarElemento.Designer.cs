@@ -38,8 +38,11 @@
             this.lbl_precio = new System.Windows.Forms.Label();
             this.lbl_marca = new System.Windows.Forms.Label();
             this.lbl_id = new System.Windows.Forms.Label();
+            this.gpb_tipoDeUtil = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gpb_Controles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).BeginInit();
+            this.gpb_tipoDeUtil.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpb_Controles
@@ -56,12 +59,11 @@
             this.gpb_Controles.Controls.Add(this.lbl_precio);
             this.gpb_Controles.Controls.Add(this.lbl_marca);
             this.gpb_Controles.Controls.Add(this.lbl_id);
-            this.gpb_Controles.Location = new System.Drawing.Point(12, 12);
+            this.gpb_Controles.Location = new System.Drawing.Point(12, 57);
             this.gpb_Controles.Name = "gpb_Controles";
             this.gpb_Controles.Size = new System.Drawing.Size(250, 209);
             this.gpb_Controles.TabIndex = 0;
             this.gpb_Controles.TabStop = false;
-            this.gpb_Controles.Text = " ";
             // 
             // chb_5
             // 
@@ -144,11 +146,30 @@
             this.lbl_id.TabIndex = 0;
             this.lbl_id.Text = "ID:";
             // 
+            // gpb_tipoDeUtil
+            // 
+            this.gpb_tipoDeUtil.Controls.Add(this.label1);
+            this.gpb_tipoDeUtil.Location = new System.Drawing.Point(12, 3);
+            this.gpb_tipoDeUtil.Name = "gpb_tipoDeUtil";
+            this.gpb_tipoDeUtil.Size = new System.Drawing.Size(250, 48);
+            this.gpb_tipoDeUtil.TabIndex = 1;
+            this.gpb_tipoDeUtil.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tipo de útil:";
+            // 
             // FrmModificarElemento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 278);
+            this.Controls.Add(this.gpb_tipoDeUtil);
             this.Controls.Add(this.gpb_Controles);
             this.Name = "FrmModificarElemento";
             this.Text = "FrmModificarElemento";
@@ -156,6 +177,8 @@
             this.gpb_Controles.ResumeLayout(false);
             this.gpb_Controles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_precio)).EndInit();
+            this.gpb_tipoDeUtil.ResumeLayout(false);
+            this.gpb_tipoDeUtil.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,5 +195,7 @@
         private System.Windows.Forms.Label lbl_4;
         private System.Windows.Forms.CheckBox chb_5;
         private System.Windows.Forms.ComboBox cmb_4;
+        private System.Windows.Forms.GroupBox gpb_tipoDeUtil;
+        private System.Windows.Forms.Label label1;
     }
 }
