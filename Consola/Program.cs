@@ -40,6 +40,7 @@ namespace Consola
             }
 
             cartuchera.EventoPrecio += (cartuchera, EventArgs) => Console.WriteLine("Ocurrio el evento.!!!!!!!!!!!!!!!!");
+            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
 
             //Console.WriteLine(cartuchera);
 
@@ -59,7 +60,7 @@ namespace Consola
             //lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Xml();
             lapizDeserializado = (Lapiz)((IDeserializa)lapizDeserializado).Json();
             */
-            Console.ReadKey();
+            //Console.ReadKey();
 
         }
     }
