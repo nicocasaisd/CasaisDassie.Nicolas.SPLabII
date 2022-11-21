@@ -78,6 +78,7 @@ namespace Biblioteca.Persistencia
             {
                 cartuchera.ListaElementos.Add(item);
             }
+            
         }
 
         private static void CargarSacapuntasEnCartuchera(Cartuchera<Util> cartuchera)

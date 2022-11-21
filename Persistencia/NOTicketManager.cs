@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public static class TicketManager
+    public static class NOTicketManager
     {
         static string archivo = "tickets.txt";
         static string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

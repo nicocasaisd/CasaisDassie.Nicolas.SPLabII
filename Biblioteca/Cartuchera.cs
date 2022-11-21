@@ -13,6 +13,7 @@ namespace Biblioteca
 
     public delegate void DelegadoPrecio(object sender, EventArgs e);
 
+
     public class Cartuchera<T> where T : Util
     {
         private int id_cartuchera;
@@ -20,7 +21,7 @@ namespace Biblioteca
         private List<T> listaElementos;
 
         public event DelegadoPrecio EventoPrecio;
-        //public event Action<int, T> EventoAgregarUtil;
+        
 
         public Cartuchera()
         {}

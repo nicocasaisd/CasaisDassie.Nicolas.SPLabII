@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public static class UtilesDAO
+    public static class NOUtilesDAO
     {
         private static string cadenaConexion;
         private static SqlCommand comando;
         private static SqlConnection conexion;
 
-        static UtilesDAO()
+        static NOUtilesDAO()
         {
             // Constructor estático
             cadenaConexion = "Server=.;Database=CARTUCHERA_DB;Trusted_Connection=True;";

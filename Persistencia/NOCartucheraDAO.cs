@@ -6,13 +6,13 @@ using System.Net;
 
 namespace Persistencia
 {
-    public static class CartucheraDAO
+    public static class NOCartucheraDAO
     {
         private static string cadenaConexion;
         private static SqlCommand comando;
         private static SqlConnection conexion;
 
-        static CartucheraDAO()
+        static NOCartucheraDAO()
         {
             // Constructor estático
             cadenaConexion = "Server=.;Database=CARTUCHERA_DB;Trusted_Connection=True;";
@@ -65,7 +65,7 @@ namespace Persistencia
 
         private static void CargarLapicesEnCartuchera(Cartuchera<Util> cartuchera)
         {
-            foreach (Util item in UtilesDAO.LeerLapices(cartuchera.Id_Cartuchera))
+            foreach (Util item in NOUtilesDAO.LeerLapices(cartuchera.Id_Cartuchera))
             {
                 cartuchera.ListaElementos.Add(item);
             }
@@ -73,7 +73,7 @@ namespace Persistencia
 
         private static void CargarGomasEnCartuchera(Cartuchera<Util> cartuchera)
         {
-            foreach (Util item in UtilesDAO.LeerGomas(cartuchera.Id_Cartuchera))
+            foreach (Util item in NOUtilesDAO.LeerGomas(cartuchera.Id_Cartuchera))
             {
                 cartuchera.ListaElementos.Add(item);
             }
@@ -81,7 +81,7 @@ namespace Persistencia
 
         private static void CargarSacapuntasEnCartuchera(Cartuchera<Util> cartuchera)
         {
-            foreach (Util item in UtilesDAO.LeerSacapuntas(cartuchera.Id_Cartuchera))
+            foreach (Util item in NOUtilesDAO.LeerSacapuntas(cartuchera.Id_Cartuchera))
             {
                 cartuchera.ListaElementos.Add(item);
             }
