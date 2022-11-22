@@ -36,10 +36,16 @@
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.gpb_Tickets = new System.Windows.Forms.GroupBox();
             this.llb_historialDeTickets = new System.Windows.Forms.LinkLabel();
+            this.gpb_Serializar = new System.Windows.Forms.GroupBox();
+            this.btn_SerializarXml = new System.Windows.Forms.Button();
+            this.btn_DeserializarXml = new System.Windows.Forms.Button();
+            this.btn_DeserializarJson = new System.Windows.Forms.Button();
+            this.btn_SerializarJson = new System.Windows.Forms.Button();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
             this.gpb_Tickets.SuspendLayout();
+            this.gpb_Serializar.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpb_ListaCartuchera
@@ -119,7 +125,7 @@
             this.gpb_Tickets.Controls.Add(this.llb_historialDeTickets);
             this.gpb_Tickets.Location = new System.Drawing.Point(12, 391);
             this.gpb_Tickets.Name = "gpb_Tickets";
-            this.gpb_Tickets.Size = new System.Drawing.Size(420, 65);
+            this.gpb_Tickets.Size = new System.Drawing.Size(140, 65);
             this.gpb_Tickets.TabIndex = 2;
             this.gpb_Tickets.TabStop = false;
             this.gpb_Tickets.Text = "Tickets";
@@ -135,11 +141,62 @@
             this.llb_historialDeTickets.Text = "Historial de Tickets";
             this.llb_historialDeTickets.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_historialDeTickets_LinkClicked);
             // 
+            // gpb_Serializar
+            // 
+            this.gpb_Serializar.Controls.Add(this.btn_DeserializarJson);
+            this.gpb_Serializar.Controls.Add(this.btn_SerializarJson);
+            this.gpb_Serializar.Controls.Add(this.btn_DeserializarXml);
+            this.gpb_Serializar.Controls.Add(this.btn_SerializarXml);
+            this.gpb_Serializar.Location = new System.Drawing.Point(163, 394);
+            this.gpb_Serializar.Name = "gpb_Serializar";
+            this.gpb_Serializar.Size = new System.Drawing.Size(435, 109);
+            this.gpb_Serializar.TabIndex = 3;
+            this.gpb_Serializar.TabStop = false;
+            this.gpb_Serializar.Text = "Serialización";
+            // 
+            // btn_SerializarXml
+            // 
+            this.btn_SerializarXml.Location = new System.Drawing.Point(11, 17);
+            this.btn_SerializarXml.Name = "btn_SerializarXml";
+            this.btn_SerializarXml.Size = new System.Drawing.Size(118, 35);
+            this.btn_SerializarXml.TabIndex = 0;
+            this.btn_SerializarXml.Text = "Serializar Lapiz";
+            this.btn_SerializarXml.UseVisualStyleBackColor = true;
+            this.btn_SerializarXml.Click += new System.EventHandler(this.btn_Serializar_Click);
+            // 
+            // btn_DeserializarXml
+            // 
+            this.btn_DeserializarXml.Location = new System.Drawing.Point(135, 17);
+            this.btn_DeserializarXml.Name = "btn_DeserializarXml";
+            this.btn_DeserializarXml.Size = new System.Drawing.Size(118, 35);
+            this.btn_DeserializarXml.TabIndex = 1;
+            this.btn_DeserializarXml.Text = "Deserializar Lapiz";
+            this.btn_DeserializarXml.UseVisualStyleBackColor = true;
+            // 
+            // btn_DeserializarJson
+            // 
+            this.btn_DeserializarJson.Location = new System.Drawing.Point(135, 68);
+            this.btn_DeserializarJson.Name = "btn_DeserializarJson";
+            this.btn_DeserializarJson.Size = new System.Drawing.Size(118, 35);
+            this.btn_DeserializarJson.TabIndex = 3;
+            this.btn_DeserializarJson.Text = "Deserializar Lapiz";
+            this.btn_DeserializarJson.UseVisualStyleBackColor = true;
+            // 
+            // btn_SerializarJson
+            // 
+            this.btn_SerializarJson.Location = new System.Drawing.Point(11, 68);
+            this.btn_SerializarJson.Name = "btn_SerializarJson";
+            this.btn_SerializarJson.Size = new System.Drawing.Size(118, 35);
+            this.btn_SerializarJson.TabIndex = 2;
+            this.btn_SerializarJson.Text = "Serializar Lapiz";
+            this.btn_SerializarJson.UseVisualStyleBackColor = true;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 515);
+            this.Controls.Add(this.gpb_Serializar);
             this.Controls.Add(this.gpb_Tickets);
             this.Controls.Add(this.gpb_Crud);
             this.Controls.Add(this.gpb_ListaCartuchera);
@@ -151,6 +208,7 @@
             this.gpb_Crud.ResumeLayout(false);
             this.gpb_Tickets.ResumeLayout(false);
             this.gpb_Tickets.PerformLayout();
+            this.gpb_Serializar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -165,5 +223,10 @@
         private System.Windows.Forms.Button btn_Modificar;
         private System.Windows.Forms.GroupBox gpb_Tickets;
         private System.Windows.Forms.LinkLabel llb_historialDeTickets;
+        private System.Windows.Forms.GroupBox gpb_Serializar;
+        private System.Windows.Forms.Button btn_DeserializarXml;
+        private System.Windows.Forms.Button btn_SerializarXml;
+        private System.Windows.Forms.Button btn_DeserializarJson;
+        private System.Windows.Forms.Button btn_SerializarJson;
     }
 }

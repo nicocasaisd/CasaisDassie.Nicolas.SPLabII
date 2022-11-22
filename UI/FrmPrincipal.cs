@@ -96,5 +96,10 @@ namespace UI
             FrmTickets frmTickets = new FrmTickets();
             frmTickets.Show();
         }
+
+        private void btn_Serializar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
