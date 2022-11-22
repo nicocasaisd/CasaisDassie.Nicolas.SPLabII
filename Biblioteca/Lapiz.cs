@@ -62,7 +62,7 @@ namespace Biblioteca
 
         object IDeserializa.Json()
         {
-            string archivo = "lapiz.json";
+            string archivo = $"lapiz_{this.Id}_{this.Marca}.json";
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string rutaCompleta = Path.Combine(ruta, archivo);
 
@@ -76,7 +76,7 @@ namespace Biblioteca
 
         void ISerializa.Xml()
         {
-            string archivo = "lapiz.xml";
+            string archivo = $"lapiz_{this.Id}_{this.Marca}.json";
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string rutaCompleta = Path.Combine(ruta, archivo);
 

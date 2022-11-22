@@ -162,7 +162,7 @@
             this.btn_SerializarXml.TabIndex = 0;
             this.btn_SerializarXml.Text = "Serializar Lapiz";
             this.btn_SerializarXml.UseVisualStyleBackColor = true;
-            this.btn_SerializarXml.Click += new System.EventHandler(this.btn_Serializar_Click);
+            this.btn_SerializarXml.Click += new System.EventHandler(this.btn_SerializarXml_Click);
             // 
             // btn_DeserializarXml
             // 

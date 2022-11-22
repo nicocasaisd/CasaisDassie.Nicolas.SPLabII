@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Biblioteca;
 using Biblioteca.Persistencia;
+using Interfaces;
 
 namespace UI
 {
@@ -97,9 +98,16 @@ namespace UI
             frmTickets.Show();
         }
 
-        private void btn_Serializar_Click(object sender, EventArgs e)
+        private void btn_SerializarXml_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                ((ISerializa)elementoSeleccionado).Xml();
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("Solo se pueden serializar elementos de tipo Lapiz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
