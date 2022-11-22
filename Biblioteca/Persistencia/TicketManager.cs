@@ -41,14 +41,18 @@ namespace Biblioteca.Persistencia
             string ticket = String.Empty;
             try
             {
-                StreamReader reader = new StreamReader(rutaCompleta);
-                ticket = reader.ReadToEnd();
+
+                using (StreamReader reader = new StreamReader(rutaCompleta))
+                {
+                    ticket = reader.ReadToEnd();
+                }
             }
             catch (Exception)
             {
 
                 throw;
             }
+
             return ticket;
         }
     }

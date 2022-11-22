@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,10 @@ namespace UI
             {
                 rtx_Tickets.Text = TicketManager.LeerTicket();
             }
-            catch (Exception)
+            catch (FileNotFoundException)
             {
-
-                throw;
+                MessageBox.Show("Aún no se han generado tickets. El archivo 'ticket.log' no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Close();
             }
         }
     }

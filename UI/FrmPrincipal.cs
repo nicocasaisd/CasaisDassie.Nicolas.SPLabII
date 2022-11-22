@@ -92,16 +92,9 @@ namespace UI
 
         private void llb_historialDeTickets_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                FrmTickets frmTickets = new FrmTickets();
-                frmTickets.Show();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Aún no se han generado tickets. El archivo 'ticket.log' no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             
+            FrmTickets frmTickets = new FrmTickets();
+            frmTickets.Show();
         }
     }
 }
