@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,8 +92,16 @@ namespace UI
 
         private void llb_historialDeTickets_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmTickets frmTickets = new FrmTickets();
-            frmTickets.Show();
+            try
+            {
+                FrmTickets frmTickets = new FrmTickets();
+                frmTickets.Show();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Aún no se han generado tickets. El archivo 'ticket.log' no existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
     }
 }

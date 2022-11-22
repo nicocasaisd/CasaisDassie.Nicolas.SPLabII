@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.Persistencia;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace UI
         public FrmTickets()
         {
             InitializeComponent();
+        }
+
+        private void FrmTickets_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                rtx_Tickets.Text = TicketManager.LeerTicket();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

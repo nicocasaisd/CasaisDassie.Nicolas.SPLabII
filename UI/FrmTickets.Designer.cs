@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtx_Tickets = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtx_Tickets
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(364, 359);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtx_Tickets.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rtx_Tickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtx_Tickets.Location = new System.Drawing.Point(0, 0);
+            this.rtx_Tickets.Name = "rtx_Tickets";
+            this.rtx_Tickets.ReadOnly = true;
+            this.rtx_Tickets.Size = new System.Drawing.Size(295, 359);
+            this.rtx_Tickets.TabIndex = 0;
+            this.rtx_Tickets.Text = "";
             // 
             // FrmTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 359);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(295, 359);
+            this.Controls.Add(this.rtx_Tickets);
             this.Name = "FrmTickets";
             this.Text = "FrmTickets";
+            this.Load += new System.EventHandler(this.FrmTickets_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtx_Tickets;
     }
 }
