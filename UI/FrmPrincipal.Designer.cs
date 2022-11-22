@@ -34,9 +34,12 @@
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
+            this.gpb_Tickets = new System.Windows.Forms.GroupBox();
+            this.llb_historialDeTickets = new System.Windows.Forms.LinkLabel();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
+            this.gpb_Tickets.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpb_ListaCartuchera
@@ -111,11 +114,33 @@
             this.btn_Agregar.UseVisualStyleBackColor = true;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
+            // gpb_Tickets
+            // 
+            this.gpb_Tickets.Controls.Add(this.llb_historialDeTickets);
+            this.gpb_Tickets.Location = new System.Drawing.Point(12, 391);
+            this.gpb_Tickets.Name = "gpb_Tickets";
+            this.gpb_Tickets.Size = new System.Drawing.Size(420, 65);
+            this.gpb_Tickets.TabIndex = 2;
+            this.gpb_Tickets.TabStop = false;
+            this.gpb_Tickets.Text = "Tickets";
+            // 
+            // llb_historialDeTickets
+            // 
+            this.llb_historialDeTickets.AutoSize = true;
+            this.llb_historialDeTickets.Location = new System.Drawing.Point(6, 30);
+            this.llb_historialDeTickets.Name = "llb_historialDeTickets";
+            this.llb_historialDeTickets.Size = new System.Drawing.Size(106, 15);
+            this.llb_historialDeTickets.TabIndex = 0;
+            this.llb_historialDeTickets.TabStop = true;
+            this.llb_historialDeTickets.Text = "Historial de Tickets";
+            this.llb_historialDeTickets.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_historialDeTickets_LinkClicked);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(678, 515);
+            this.Controls.Add(this.gpb_Tickets);
             this.Controls.Add(this.gpb_Crud);
             this.Controls.Add(this.gpb_ListaCartuchera);
             this.Name = "FrmPrincipal";
@@ -124,6 +149,8 @@
             this.gpb_ListaCartuchera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).EndInit();
             this.gpb_Crud.ResumeLayout(false);
+            this.gpb_Tickets.ResumeLayout(false);
+            this.gpb_Tickets.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +163,7 @@
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Button btn_Eliminar;
         private System.Windows.Forms.Button btn_Modificar;
+        private System.Windows.Forms.GroupBox gpb_Tickets;
+        private System.Windows.Forms.LinkLabel llb_historialDeTickets;
     }
 }

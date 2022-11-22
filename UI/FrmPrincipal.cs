@@ -88,5 +88,10 @@ namespace UI
             }
             
         }
+
+        private void llb_historialDeTickets_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
