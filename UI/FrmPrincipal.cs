@@ -106,7 +106,27 @@ namespace UI
             }
             catch (InvalidCastException)
             {
-                MessageBox.Show("Solo se pueden serializar elementos de tipo Lapiz", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Solo se pueden serializar elementos de tipo Lapiz.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_SerializarJson_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ((ISerializa)elementoSeleccionado).Json();
+            }
+            catch (InvalidCastException)
+            {
+                MessageBox.Show("Solo se pueden serializar elementos de tipo Lapiz.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
