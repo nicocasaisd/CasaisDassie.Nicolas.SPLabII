@@ -59,6 +59,7 @@ namespace Biblioteca.Persistencia
                 }
             }
 
+            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             return cartuchera;
         }
 

@@ -34,7 +34,7 @@ namespace UI
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
-            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
+            //cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.EventoCambioLista += EventoCambioLista_Handler;
         }
 
@@ -59,7 +59,7 @@ namespace UI
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera.Id_Cartuchera, eModificarProductoOpcion.AgregarProducto);
+            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera, eModificarProductoOpcion.AgregarProducto);
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
@@ -70,7 +70,7 @@ namespace UI
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera.Id_Cartuchera, eModificarProductoOpcion.ModificarProducto, elementoSeleccionado);
+            FrmModificarElemento frmModificar = new FrmModificarElemento(cartuchera, eModificarProductoOpcion.ModificarProducto, elementoSeleccionado);
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {

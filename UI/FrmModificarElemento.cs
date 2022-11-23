@@ -19,7 +19,7 @@ namespace UI
 
     public partial class FrmModificarElemento : Form
     {
-        int id_cartuchera;
+        Cartuchera<Util> cartuchera;
         eModificarProductoOpcion opcion;
         Util elementoSeleccionado;
         
@@ -29,12 +29,12 @@ namespace UI
             InitializeComponent();
         }
 
-        public FrmModificarElemento(int id_cartuchera, eModificarProductoOpcion opcion) :this()
+        public FrmModificarElemento(Cartuchera<Util> cartuchera, eModificarProductoOpcion opcion) :this()
         {
-            this.id_cartuchera = id_cartuchera;
+            this.cartuchera = cartuchera;
             this.opcion = opcion;
         }
-        public FrmModificarElemento(int id_cartuchera, eModificarProductoOpcion opcion, Util util) : this(id_cartuchera, opcion)
+        public FrmModificarElemento(Cartuchera<Util> cartuchera, eModificarProductoOpcion opcion, Util util) : this(cartuchera, opcion)
         {
             this.elementoSeleccionado = util;
             AsignarOpcionesDeUtil(util.Tipo);
@@ -147,19 +147,22 @@ namespace UI
                     EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
                     bool esMecanico = chb_5.Checked;
                     Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
-                    UtilesDAO.GuardarUtil(id_cartuchera, lapiz);
+                    //UtilesDAO.GuardarUtil(id_cartuchera, lapiz);
+                    _ = cartuchera + lapiz;
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
                 {
                     bool esBorraTinta = chb_5.Checked;
                     Goma goma = new Goma(0, marca, precio, esBorraTinta);
-                    UtilesDAO.GuardarUtil(id_cartuchera, goma);
+                    //UtilesDAO.GuardarUtil(id_cartuchera, goma);
+                    _ = cartuchera + goma;
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
                 {
                     EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
                     Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
-                    UtilesDAO.GuardarUtil(id_cartuchera, sacapunta);
+                    //UtilesDAO.GuardarUtil(id_cartuchera, sacapunta);
+                    _ = cartuchera + sacapunta;
                 }
             }
             else
@@ -192,9 +195,9 @@ namespace UI
                     UtilesDAO.ModificarUtil(sacapunta);
                 }
 
+            }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-            }
         }
     }
 }
