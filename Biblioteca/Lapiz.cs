@@ -76,13 +76,7 @@ namespace Biblioteca
 
         object IDeserializa.Json(string path)
         {
-            string archivo = $"lapiz.json";
-            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string rutaCompleta = Path.Combine(ruta, archivo);
-
-
-
-            string jsonString = File.ReadAllText(rutaCompleta);
+            string jsonString = File.ReadAllText(path);
             Lapiz lapiz = JsonSerializer.Deserialize<Lapiz>(jsonString);
 
             return lapiz;

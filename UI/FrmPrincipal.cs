@@ -150,5 +150,25 @@ namespace UI
                 }
             }
         }
+
+        private void btn_DeserializarJson_Click(object sender, EventArgs e)
+        {
+            if (ofd_Deserializar.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Lapiz lapizDeserializado = (Lapiz)((IDeserializa)elementoSeleccionado).Json(ofd_Deserializar.FileName);
+                    MessageBox.Show(lapizDeserializado.ToString());
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Solo se pueden deserializar archivos JSON de tipo Lapiz.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

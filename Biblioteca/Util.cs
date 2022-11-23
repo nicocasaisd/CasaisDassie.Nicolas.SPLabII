@@ -23,7 +23,11 @@ namespace Biblioteca
             this.precio = precio;
         }
 
-        public int Id { get { return id; } }
+        public int Id 
+        { 
+            get { return id; } 
+            set { id = value; }
+        }
 
         public string Marca
         {

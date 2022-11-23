@@ -161,7 +161,7 @@
             this.btn_DeserializarXml.Name = "btn_DeserializarXml";
             this.btn_DeserializarXml.Size = new System.Drawing.Size(118, 35);
             this.btn_DeserializarXml.TabIndex = 1;
-            this.btn_DeserializarXml.Text = "Deserializar Lapiz";
+            this.btn_DeserializarXml.Text = "Deserializar XML";
             this.btn_DeserializarXml.UseVisualStyleBackColor = true;
             this.btn_DeserializarXml.Click += new System.EventHandler(this.btn_DeserializarXml_Click);
             // 
@@ -171,7 +171,7 @@
             this.btn_SerializarXml.Name = "btn_SerializarXml";
             this.btn_SerializarXml.Size = new System.Drawing.Size(118, 35);
             this.btn_SerializarXml.TabIndex = 0;
-            this.btn_SerializarXml.Text = "Serializar Lapiz";
+            this.btn_SerializarXml.Text = "Serializar XML";
             this.btn_SerializarXml.UseVisualStyleBackColor = true;
             this.btn_SerializarXml.Click += new System.EventHandler(this.btn_SerializarXml_Click);
             // 
@@ -181,8 +181,9 @@
             this.btn_DeserializarJson.Name = "btn_DeserializarJson";
             this.btn_DeserializarJson.Size = new System.Drawing.Size(118, 35);
             this.btn_DeserializarJson.TabIndex = 3;
-            this.btn_DeserializarJson.Text = "Deserializar Lapiz";
+            this.btn_DeserializarJson.Text = "Deserializar JSON";
             this.btn_DeserializarJson.UseVisualStyleBackColor = true;
+            this.btn_DeserializarJson.Click += new System.EventHandler(this.btn_DeserializarJson_Click);
             // 
             // btn_SerializarJson
             // 
@@ -190,7 +191,7 @@
             this.btn_SerializarJson.Name = "btn_SerializarJson";
             this.btn_SerializarJson.Size = new System.Drawing.Size(118, 35);
             this.btn_SerializarJson.TabIndex = 2;
-            this.btn_SerializarJson.Text = "Serializar Lapiz";
+            this.btn_SerializarJson.Text = "Serializar JSON";
             this.btn_SerializarJson.UseVisualStyleBackColor = true;
             this.btn_SerializarJson.Click += new System.EventHandler(this.btn_SerializarJson_Click);
             // 
