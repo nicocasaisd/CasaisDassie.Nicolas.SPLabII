@@ -164,7 +164,7 @@ namespace UI
                     Lapiz lapizDeserializado = (Lapiz)((IDeserializa)elementoSeleccionado).Json(ofd_Deserializar.FileName);
                     MessageBox.Show(lapizDeserializado.ToString());
                 }
-                catch (InvalidOperationException)
+                catch (System.Text.Json.JsonException)
                 {
                     MessageBox.Show("Solo se pueden deserializar archivos JSON de tipo Lapiz.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
