@@ -197,7 +197,7 @@ namespace Biblioteca.Persistencia
                 if (util is Lapiz)
                 {
                     Lapiz lapiz = (Lapiz)util;
-                    comando.CommandText = $"UPDATE LAPICES\r\nSET MARCA='@marca', PRECIO=@precio, COLOR=@colorInt, ES_MECANICO=@esMecanico \r\nWHERE ID={util.Id};";
+                    comando.CommandText = $"UPDATE LAPICES\r\nSET MARCA=@marca, PRECIO=@precio, COLOR=@colorInt, ES_MECANICO=@esMecanico \r\nWHERE ID={util.Id};";
                     comando.Parameters.AddWithValue("@marca", lapiz.Marca);
                     comando.Parameters.AddWithValue("@precio", lapiz.Precio);
                     comando.Parameters.AddWithValue("@colorInt", (int)lapiz.Color);
@@ -206,7 +206,7 @@ namespace Biblioteca.Persistencia
                 else if (util is Goma)
                 {
                     Goma goma = (Goma)util;
-                    comando.CommandText = $"UPDATE GOMAS\r\nSET MARCA='@marca', PRECIO=@precio, ES_BORRATINTA=@esBorraTinta \r\nWHERE ID={util.Id};";
+                    comando.CommandText = $"UPDATE GOMAS\r\nSET MARCA=@marca, PRECIO=@precio, ES_BORRATINTA=@esBorraTinta \r\nWHERE ID={util.Id};";
                     comando.Parameters.AddWithValue("@marca", goma.Marca);
                     comando.Parameters.AddWithValue("@precio", goma.Precio);
                     comando.Parameters.AddWithValue("@esBorraTinta", goma.EsBorraTinta);
@@ -214,7 +214,7 @@ namespace Biblioteca.Persistencia
                 else if (util is Sacapunta)
                 {
                     Sacapunta sacapunta = (Sacapunta)util;
-                    comando.CommandText = $"UPDATE SACAPUNTAS\r\nSET MARCA='@marca', PRECIO=@precio, MATERIAL=@material \r\nWHERE ID={util.Id};";
+                    comando.CommandText = $"UPDATE SACAPUNTAS\r\nSET MARCA=@marca, PRECIO=@precio, MATERIAL=@material \r\nWHERE ID={util.Id};";
                     comando.Parameters.AddWithValue("@marca", sacapunta.Marca);
                     comando.Parameters.AddWithValue("@precio", sacapunta.Precio);
                     comando.Parameters.AddWithValue("@material", sacapunta.Material);

@@ -20,6 +20,7 @@ namespace Biblioteca
         public bool EsBorraTinta
         {
             get { return esBorraTinta; }
+            set { esBorraTinta = value; }
         }
 
         public override string ToString()

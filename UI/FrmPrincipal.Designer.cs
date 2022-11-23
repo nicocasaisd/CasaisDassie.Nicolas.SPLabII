@@ -86,7 +86,7 @@
             this.gpb_Crud.Controls.Add(this.btn_Eliminar);
             this.gpb_Crud.Controls.Add(this.btn_Modificar);
             this.gpb_Crud.Controls.Add(this.btn_Agregar);
-            this.gpb_Crud.Location = new System.Drawing.Point(12, 317);
+            this.gpb_Crud.Location = new System.Drawing.Point(12, 352);
             this.gpb_Crud.Name = "gpb_Crud";
             this.gpb_Crud.Size = new System.Drawing.Size(586, 69);
             this.gpb_Crud.TabIndex = 1;
@@ -126,7 +126,7 @@
             // gpb_Tickets
             // 
             this.gpb_Tickets.Controls.Add(this.llb_historialDeTickets);
-            this.gpb_Tickets.Location = new System.Drawing.Point(12, 391);
+            this.gpb_Tickets.Location = new System.Drawing.Point(12, 426);
             this.gpb_Tickets.Name = "gpb_Tickets";
             this.gpb_Tickets.Size = new System.Drawing.Size(140, 65);
             this.gpb_Tickets.TabIndex = 2;
@@ -148,7 +148,7 @@
             // 
             this.gpb_SerializarXml.Controls.Add(this.btn_DeserializarXml);
             this.gpb_SerializarXml.Controls.Add(this.btn_SerializarXml);
-            this.gpb_SerializarXml.Location = new System.Drawing.Point(163, 394);
+            this.gpb_SerializarXml.Location = new System.Drawing.Point(163, 429);
             this.gpb_SerializarXml.Name = "gpb_SerializarXml";
             this.gpb_SerializarXml.Size = new System.Drawing.Size(269, 62);
             this.gpb_SerializarXml.TabIndex = 3;
@@ -199,7 +199,7 @@
             // 
             this.gpb_SerializarJson.Controls.Add(this.btn_DeserializarJson);
             this.gpb_SerializarJson.Controls.Add(this.btn_SerializarJson);
-            this.gpb_SerializarJson.Location = new System.Drawing.Point(163, 462);
+            this.gpb_SerializarJson.Location = new System.Drawing.Point(163, 497);
             this.gpb_SerializarJson.Name = "gpb_SerializarJson";
             this.gpb_SerializarJson.Size = new System.Drawing.Size(269, 62);
             this.gpb_SerializarJson.TabIndex = 4;

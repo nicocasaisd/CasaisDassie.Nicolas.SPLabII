@@ -21,6 +21,7 @@ namespace Biblioteca
         public EMaterialSacapunta Material
         {
             get { return material; }
+            set { material = value; }
         }
 
         public override string ToString()

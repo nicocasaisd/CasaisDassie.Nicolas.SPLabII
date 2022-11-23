@@ -148,25 +148,52 @@ namespace UI
                     bool esMecanico = chb_5.Checked;
                     Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
                     UtilesDAO.GuardarUtil(id_cartuchera, lapiz);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
                 {
                     bool esBorraTinta = chb_5.Checked;
                     Goma goma = new Goma(0, marca, precio, esBorraTinta);
                     UtilesDAO.GuardarUtil(id_cartuchera, goma);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
                 {
                     EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
                     Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
                     UtilesDAO.GuardarUtil(id_cartuchera, sacapunta);
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
+            }
+            else
+            {
+                if (elementoSeleccionado is Lapiz)
+                {
+                    Lapiz lapiz = (Lapiz)elementoSeleccionado;
+                    lapiz.Marca = marca;
+                    lapiz.Precio = precio;
+                    lapiz.Color = (EColorLapiz)cmb_4.SelectedItem;
+                    lapiz.EsMecanico =  chb_5.Checked;
+
+                    UtilesDAO.ModificarUtil(lapiz);
+                    
+                }
+                else if (elementoSeleccionado is Goma)
+                {
+                    Goma goma = (Goma)elementoSeleccionado;
+                    goma.Marca = marca;
+                    goma.Precio = precio;
+                    goma.EsBorraTinta = chb_5.Checked;
+                    UtilesDAO.ModificarUtil(goma);
+                }
+                else if (elementoSeleccionado is Sacapunta)
+                {
+                    Sacapunta sacapunta = (Sacapunta)elementoSeleccionado;
+                    sacapunta.Marca = marca;
+                    sacapunta.Precio = precio;
+                    sacapunta.Material = (EMaterialSacapunta)cmb_4.SelectedItem;
+                    UtilesDAO.ModificarUtil(sacapunta);
+                }
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }
