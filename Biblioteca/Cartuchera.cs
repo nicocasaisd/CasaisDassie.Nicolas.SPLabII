@@ -74,7 +74,7 @@ namespace Biblioteca
             }
             if(cartuchera.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
             {
-                cartuchera.EventoPrecio.Invoke(cartuchera, new EventArgs());
+                cartuchera.EventoPrecio.Invoke(CartucheraDAO.Leer(), new EventArgs());
             }
 
             return false;

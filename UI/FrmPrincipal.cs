@@ -34,7 +34,7 @@ namespace UI
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
-            //cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
+            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.EventoCambioLista += EventoCambioLista_Handler;
         }
 
@@ -52,6 +52,7 @@ namespace UI
         {
             
             cartuchera = CartucheraDAO.Leer();
+            cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
             MessageBox.Show("Cambio realizado en la lista.");
