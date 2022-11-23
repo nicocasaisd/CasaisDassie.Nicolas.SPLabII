@@ -163,6 +163,7 @@
             this.btn_DeserializarXml.TabIndex = 1;
             this.btn_DeserializarXml.Text = "Deserializar Lapiz";
             this.btn_DeserializarXml.UseVisualStyleBackColor = true;
+            this.btn_DeserializarXml.Click += new System.EventHandler(this.btn_DeserializarXml_Click);
             // 
             // btn_SerializarXml
             // 
@@ -206,7 +207,7 @@
             // 
             // ofd_Deserializar
             // 
-            this.ofd_Deserializar.FileName = "ofd_Deserializar";
+            this.ofd_Deserializar.FileName = "null";
             // 
             // FrmPrincipal
             // 

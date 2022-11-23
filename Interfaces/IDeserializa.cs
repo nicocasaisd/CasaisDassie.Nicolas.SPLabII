@@ -10,5 +10,8 @@ namespace Interfaces
     {
         object Xml();
         object Json();
+        object Xml(string path);
+        object Json(string path);
+
     }
 }

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using Biblioteca;
 using Biblioteca.Persistencia;
 using Interfaces;
@@ -127,6 +128,26 @@ namespace UI
             catch (Exception)
             {
                 MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_DeserializarXml_Click(object sender, EventArgs e)
+        {
+            if (ofd_Deserializar.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    Lapiz lapizDeserializado =(Lapiz) ((IDeserializa)elementoSeleccionado).Xml(ofd_Deserializar.FileName);
+                    MessageBox.Show(lapizDeserializado.ToString());
+                }
+                catch (InvalidOperationException)
+                {
+                    MessageBox.Show("Solo se pueden deserializar archivos XML de tipo Lapiz.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

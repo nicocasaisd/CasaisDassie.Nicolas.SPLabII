@@ -74,6 +74,20 @@ namespace Biblioteca
             return lapiz;
         }
 
+        object IDeserializa.Json(string path)
+        {
+            string archivo = $"lapiz.json";
+            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string rutaCompleta = Path.Combine(ruta, archivo);
+
+
+
+            string jsonString = File.ReadAllText(rutaCompleta);
+            Lapiz lapiz = JsonSerializer.Deserialize<Lapiz>(jsonString);
+
+            return lapiz;
+        }
+
         void ISerializa.Xml()
         {
             string archivo = $"lapiz_{this.Id}_{this.Marca}.xml";
@@ -87,13 +101,37 @@ namespace Biblioteca
             }
         }
 
+        //object IDeserializa.Xml()
+        //{
+        //    string archivo = "lapiz.xml";
+        //    string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        //    string rutaCompleta = Path.Combine(ruta, archivo);
+
+        //    using( StreamReader reader = new StreamReader(rutaCompleta))
+        //    {
+        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
+        //        Lapiz lapiz = xmlSerializer.Deserialize(reader) as Lapiz;
+        //        return lapiz;
+        //    }
+        //}
+
         object IDeserializa.Xml()
         {
             string archivo = "lapiz.xml";
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             string rutaCompleta = Path.Combine(ruta, archivo);
 
-            using( StreamReader reader = new StreamReader(rutaCompleta))
+            using (StreamReader reader = new StreamReader(rutaCompleta))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
+                Lapiz lapiz = xmlSerializer.Deserialize(reader) as Lapiz;
+                return lapiz;
+            }
+        }
+
+        object IDeserializa.Xml(string path)
+        {
+            using (StreamReader reader = new StreamReader(path))
             {
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
                 Lapiz lapiz = xmlSerializer.Deserialize(reader) as Lapiz;
