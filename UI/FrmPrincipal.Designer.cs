@@ -43,6 +43,8 @@
             this.btn_SerializarJson = new System.Windows.Forms.Button();
             this.gpb_SerializarJson = new System.Windows.Forms.GroupBox();
             this.ofd_Deserializar = new System.Windows.Forms.OpenFileDialog();
+            this.lbl_precio = new System.Windows.Forms.Label();
+            this.txt_precioTotal = new System.Windows.Forms.TextBox();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -210,11 +212,30 @@
             // 
             this.ofd_Deserializar.FileName = "null";
             // 
+            // lbl_precio
+            // 
+            this.lbl_precio.AutoSize = true;
+            this.lbl_precio.Location = new System.Drawing.Point(408, 320);
+            this.lbl_precio.Name = "lbl_precio";
+            this.lbl_precio.Size = new System.Drawing.Size(71, 15);
+            this.lbl_precio.TabIndex = 5;
+            this.lbl_precio.Text = "Precio Total:";
+            // 
+            // txt_precioTotal
+            // 
+            this.txt_precioTotal.Location = new System.Drawing.Point(485, 317);
+            this.txt_precioTotal.Name = "txt_precioTotal";
+            this.txt_precioTotal.ReadOnly = true;
+            this.txt_precioTotal.Size = new System.Drawing.Size(100, 23);
+            this.txt_precioTotal.TabIndex = 6;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 568);
+            this.Controls.Add(this.txt_precioTotal);
+            this.Controls.Add(this.lbl_precio);
             this.Controls.Add(this.gpb_SerializarJson);
             this.Controls.Add(this.gpb_SerializarXml);
             this.Controls.Add(this.gpb_Tickets);
@@ -231,6 +252,7 @@
             this.gpb_SerializarXml.ResumeLayout(false);
             this.gpb_SerializarJson.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -251,5 +273,7 @@
         private System.Windows.Forms.Button btn_SerializarJson;
         private System.Windows.Forms.GroupBox gpb_SerializarJson;
         private System.Windows.Forms.OpenFileDialog ofd_Deserializar;
+        private System.Windows.Forms.Label lbl_precio;
+        private System.Windows.Forms.TextBox txt_precioTotal;
     }
 }
