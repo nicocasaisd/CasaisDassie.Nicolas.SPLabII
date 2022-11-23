@@ -37,11 +37,12 @@
             this.gpb_Tickets = new System.Windows.Forms.GroupBox();
             this.llb_historialDeTickets = new System.Windows.Forms.LinkLabel();
             this.gpb_SerializarXml = new System.Windows.Forms.GroupBox();
-            this.btn_DeserializarJson = new System.Windows.Forms.Button();
-            this.btn_SerializarJson = new System.Windows.Forms.Button();
             this.btn_DeserializarXml = new System.Windows.Forms.Button();
             this.btn_SerializarXml = new System.Windows.Forms.Button();
+            this.btn_DeserializarJson = new System.Windows.Forms.Button();
+            this.btn_SerializarJson = new System.Windows.Forms.Button();
             this.gpb_SerializarJson = new System.Windows.Forms.GroupBox();
+            this.ofd_Deserializar = new System.Windows.Forms.OpenFileDialog();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -154,25 +155,6 @@
             this.gpb_SerializarXml.TabStop = false;
             this.gpb_SerializarXml.Text = "Serialización XML";
             // 
-            // btn_DeserializarJson
-            // 
-            this.btn_DeserializarJson.Location = new System.Drawing.Point(135, 19);
-            this.btn_DeserializarJson.Name = "btn_DeserializarJson";
-            this.btn_DeserializarJson.Size = new System.Drawing.Size(118, 35);
-            this.btn_DeserializarJson.TabIndex = 3;
-            this.btn_DeserializarJson.Text = "Deserializar Lapiz";
-            this.btn_DeserializarJson.UseVisualStyleBackColor = true;
-            // 
-            // btn_SerializarJson
-            // 
-            this.btn_SerializarJson.Location = new System.Drawing.Point(11, 19);
-            this.btn_SerializarJson.Name = "btn_SerializarJson";
-            this.btn_SerializarJson.Size = new System.Drawing.Size(118, 35);
-            this.btn_SerializarJson.TabIndex = 2;
-            this.btn_SerializarJson.Text = "Serializar Lapiz";
-            this.btn_SerializarJson.UseVisualStyleBackColor = true;
-            this.btn_SerializarJson.Click += new System.EventHandler(this.btn_SerializarJson_Click);
-            // 
             // btn_DeserializarXml
             // 
             this.btn_DeserializarXml.Location = new System.Drawing.Point(135, 17);
@@ -192,6 +174,25 @@
             this.btn_SerializarXml.UseVisualStyleBackColor = true;
             this.btn_SerializarXml.Click += new System.EventHandler(this.btn_SerializarXml_Click);
             // 
+            // btn_DeserializarJson
+            // 
+            this.btn_DeserializarJson.Location = new System.Drawing.Point(135, 19);
+            this.btn_DeserializarJson.Name = "btn_DeserializarJson";
+            this.btn_DeserializarJson.Size = new System.Drawing.Size(118, 35);
+            this.btn_DeserializarJson.TabIndex = 3;
+            this.btn_DeserializarJson.Text = "Deserializar Lapiz";
+            this.btn_DeserializarJson.UseVisualStyleBackColor = true;
+            // 
+            // btn_SerializarJson
+            // 
+            this.btn_SerializarJson.Location = new System.Drawing.Point(11, 19);
+            this.btn_SerializarJson.Name = "btn_SerializarJson";
+            this.btn_SerializarJson.Size = new System.Drawing.Size(118, 35);
+            this.btn_SerializarJson.TabIndex = 2;
+            this.btn_SerializarJson.Text = "Serializar Lapiz";
+            this.btn_SerializarJson.UseVisualStyleBackColor = true;
+            this.btn_SerializarJson.Click += new System.EventHandler(this.btn_SerializarJson_Click);
+            // 
             // gpb_SerializarJson
             // 
             this.gpb_SerializarJson.Controls.Add(this.btn_DeserializarJson);
@@ -202,6 +203,10 @@
             this.gpb_SerializarJson.TabIndex = 4;
             this.gpb_SerializarJson.TabStop = false;
             this.gpb_SerializarJson.Text = "Serializacion JSON";
+            // 
+            // ofd_Deserializar
+            // 
+            this.ofd_Deserializar.FileName = "ofd_Deserializar";
             // 
             // FrmPrincipal
             // 
@@ -243,5 +248,6 @@
         private System.Windows.Forms.Button btn_DeserializarJson;
         private System.Windows.Forms.Button btn_SerializarJson;
         private System.Windows.Forms.GroupBox gpb_SerializarJson;
+        private System.Windows.Forms.OpenFileDialog ofd_Deserializar;
     }
 }
