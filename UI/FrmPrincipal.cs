@@ -25,6 +25,7 @@ namespace UI
         Cartuchera<Util> cartuchera;
         Util elementoSeleccionado;
         public event DelegadoCambioLista EventoCambioLista;
+        // Hilos
         Task backup;
         CancellationToken token;
         CancellationTokenSource tokenSource;
@@ -51,10 +52,6 @@ namespace UI
             // Hilo de backup
             backup = Task.Run(RealizarBackupYDormir, this.token);
             Task estadoDeBackup = Task.Run(InformarEstadoDeHilo);
-
-            // strip status llb
-            tsslbl_mensaje.Text = "";
-            
         }
 
         
@@ -67,14 +64,19 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Manejador de EventoCambioLista que actualiza el DataGridView.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EventoCambioLista_Handler(object sender, EventArgs e)
         {
-            
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
             MessageBox.Show("Cambio realizado en la lista.");
         }
+
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {

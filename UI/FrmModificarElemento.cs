@@ -50,17 +50,18 @@ namespace UI
                 this.Text = "Agregar Util";
                 Array eTipo = Enum.GetValues(typeof(ETipoDeUtil));
                 cmb_tipoDeUtil.DataSource = eTipo;
-
             }
             else
             {
                 this.Text = "Modificar Util";
                 gpb_tipoDeUtil.Visible = false;
             }
-
-
         }
 
+        /// <summary>
+        /// Modifica texto y visibilidad de los Labels de acuerdo al tipo de util seleccionado.
+        /// </summary>
+        /// <param name="tipo"></param>
         private void AsignarOpcionesDeUtil(ETipoDeUtil tipo)
         {
             if (tipo == ETipoDeUtil.Lapiz)
@@ -86,6 +87,10 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Si se modifica el util, asigna los valores a los campos correspondientes.
+        /// </summary>
+        /// <param name="tipo"></param>
         private void AsignarValoresDeUtil(ETipoDeUtil tipo)
         {
             // Si el util ya existe, asigno los valores de util
@@ -99,20 +104,17 @@ namespace UI
             if(tipo == ETipoDeUtil.Lapiz)
             {
                 Lapiz lapiz = (Lapiz)elementoSeleccionado;
-                // Si el util ya existe, asigno los valores de lapiz
                 cmb_4.SelectedIndex = (int)lapiz.Color;
                 chb_5.Checked = lapiz.EsMecanico;
             }
             else if(tipo == ETipoDeUtil.Goma)
             {
                 Goma goma = (Goma)elementoSeleccionado;
-                // Si el util ya existe, asigno los valores de goma
                 chb_5.Checked = goma.EsBorraTinta;
             }
             else
             {
                 Sacapunta sacapunta = (Sacapunta)elementoSeleccionado;
-                // Si el util ya existe, asigno los valores de sacapunta
                 cmb_4.SelectedIndex = (int)sacapunta.Material;
             }
 
@@ -134,6 +136,11 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Modifica o Agrega el util a la base de datos según el tipo de útil pasado.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
             string marca = txt_marca.Text;
@@ -147,21 +154,18 @@ namespace UI
                     EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
                     bool esMecanico = chb_5.Checked;
                     Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
-                    //UtilesDAO.GuardarUtil(id_cartuchera, lapiz);
                     _ = cartuchera + lapiz;
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
                 {
                     bool esBorraTinta = chb_5.Checked;
                     Goma goma = new Goma(0, marca, precio, esBorraTinta);
-                    //UtilesDAO.GuardarUtil(id_cartuchera, goma);
                     _ = cartuchera + goma;
                 }
                 else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
                 {
                     EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
                     Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
-                    //UtilesDAO.GuardarUtil(id_cartuchera, sacapunta);
                     _ = cartuchera + sacapunta;
                 }
             }
