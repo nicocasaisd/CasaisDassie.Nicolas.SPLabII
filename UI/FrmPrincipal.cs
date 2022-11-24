@@ -24,10 +24,15 @@ namespace UI
         Cartuchera<Util> cartuchera;
         Util elementoSeleccionado;
         public event DelegadoCambioLista EventoCambioLista;
+        Task backup;
+        CancellationToken token;
+        CancellationTokenSource tokenSource;
 
         public FrmPrincipal()
         {
             InitializeComponent();
+            token = new CancellationToken();
+            tokenSource = new CancellationTokenSource();
             
         }
 
@@ -41,10 +46,12 @@ namespace UI
             this.EventoCambioLista += ManejadoresDeEventos.EventoCambioLista_HistorialDeAccionesHandler;
 
             // Hilo de backup
-            Task backup = Task.Run(RealizarBackupYDormir);
+            backup = Task.Run(RealizarBackupYDormir, this.token);
+            Task estadoDeBackup = Task.Run(InformarEstadoDeHilo);
 
             // strip status llb
             tsslbl_mensaje.Text = "";
+            
         }
 
         
@@ -190,7 +197,7 @@ namespace UI
 
         public void RealizarBackupYDormir()
         {
-            while(true)
+            while(!tokenSource.IsCancellationRequested)
             {
                 try
                 {
@@ -205,6 +212,20 @@ namespace UI
                 Thread.Sleep(30000);
                 
             }
+        }
+
+        public void InformarEstadoDeHilo()
+        {
+            while(true)
+            {
+                tsslbl_hilo.Text = $"Estado del hilo backup: {this.backup.InformarEstado()}";
+                Thread.Sleep(5000);
+            }
+        }
+
+        private void llb_CancelarBackup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.tokenSource.Cancel();
         }
     }
 }

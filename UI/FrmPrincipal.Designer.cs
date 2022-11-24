@@ -47,6 +47,8 @@
             this.txt_precioTotal = new System.Windows.Forms.TextBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.tsslbl_mensaje = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsslbl_hilo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.llb_CancelarBackup = new System.Windows.Forms.LinkLabel();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -220,9 +222,9 @@
             this.lbl_precio.AutoSize = true;
             this.lbl_precio.Location = new System.Drawing.Point(408, 320);
             this.lbl_precio.Name = "lbl_precio";
-            this.lbl_precio.Size = new System.Drawing.Size(71, 15);
+            this.lbl_precio.Size = new System.Drawing.Size(80, 15);
             this.lbl_precio.TabIndex = 5;
-            this.lbl_precio.Text = "Precio Total:";
+            this.lbl_precio.Text = "Precio Total: $";
             // 
             // txt_precioTotal
             // 
@@ -235,7 +237,8 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslbl_mensaje});
+            this.tsslbl_mensaje,
+            this.tsslbl_hilo});
             this.statusStrip.Location = new System.Drawing.Point(0, 571);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(678, 22);
@@ -248,11 +251,30 @@
             this.tsslbl_mensaje.Size = new System.Drawing.Size(118, 17);
             this.tsslbl_mensaje.Text = "toolStripStatusLabel1";
             // 
+            // tsslbl_hilo
+            // 
+            this.tsslbl_hilo.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.tsslbl_hilo.Name = "tsslbl_hilo";
+            this.tsslbl_hilo.Size = new System.Drawing.Size(29, 17);
+            this.tsslbl_hilo.Text = "Hilo";
+            // 
+            // llb_CancelarBackup
+            // 
+            this.llb_CancelarBackup.AutoSize = true;
+            this.llb_CancelarBackup.Location = new System.Drawing.Point(11, 545);
+            this.llb_CancelarBackup.Name = "llb_CancelarBackup";
+            this.llb_CancelarBackup.Size = new System.Drawing.Size(120, 15);
+            this.llb_CancelarBackup.TabIndex = 8;
+            this.llb_CancelarBackup.TabStop = true;
+            this.llb_CancelarBackup.Text = "Cancelar Hilo Backup";
+            this.llb_CancelarBackup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_CancelarBackup_LinkClicked);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 593);
+            this.Controls.Add(this.llb_CancelarBackup);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.txt_precioTotal);
             this.Controls.Add(this.lbl_precio);
@@ -262,7 +284,7 @@
             this.Controls.Add(this.gpb_Crud);
             this.Controls.Add(this.gpb_ListaCartuchera);
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Administrador de Cartuchera";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.gpb_ListaCartuchera.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).EndInit();
@@ -299,5 +321,7 @@
         private System.Windows.Forms.TextBox txt_precioTotal;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel tsslbl_mensaje;
+        private System.Windows.Forms.ToolStripStatusLabel tsslbl_hilo;
+        private System.Windows.Forms.LinkLabel llb_CancelarBackup;
     }
 }
