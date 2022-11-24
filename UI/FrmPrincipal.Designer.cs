@@ -49,6 +49,8 @@
             this.tsslbl_mensaje = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsslbl_hilo = new System.Windows.Forms.ToolStripStatusLabel();
             this.llb_CancelarBackup = new System.Windows.Forms.LinkLabel();
+            this.btn_Resaltar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -90,6 +92,7 @@
             // 
             // gpb_Crud
             // 
+            this.gpb_Crud.Controls.Add(this.groupBox1);
             this.gpb_Crud.Controls.Add(this.btn_Eliminar);
             this.gpb_Crud.Controls.Add(this.btn_Modificar);
             this.gpb_Crud.Controls.Add(this.btn_Agregar);
@@ -269,11 +272,30 @@
             this.llb_CancelarBackup.Text = "Cancelar Hilo Backup";
             this.llb_CancelarBackup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_CancelarBackup_LinkClicked);
             // 
+            // btn_Resaltar
+            // 
+            this.btn_Resaltar.Location = new System.Drawing.Point(485, 497);
+            this.btn_Resaltar.Name = "btn_Resaltar";
+            this.btn_Resaltar.Size = new System.Drawing.Size(137, 56);
+            this.btn_Resaltar.TabIndex = 9;
+            this.btn_Resaltar.Text = "Resaltar Fibron";
+            this.btn_Resaltar.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(454, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 593);
+            this.Controls.Add(this.btn_Resaltar);
             this.Controls.Add(this.llb_CancelarBackup);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.txt_precioTotal);
@@ -323,5 +345,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tsslbl_mensaje;
         private System.Windows.Forms.ToolStripStatusLabel tsslbl_hilo;
         private System.Windows.Forms.LinkLabel llb_CancelarBackup;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btn_Resaltar;
     }
 }

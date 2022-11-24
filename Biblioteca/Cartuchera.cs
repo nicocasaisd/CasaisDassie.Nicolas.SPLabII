@@ -12,7 +12,6 @@ namespace Biblioteca
 {
 
     public delegate void DelegadoPrecio(object sender, EventArgs e);
-    // prueba
     public delegate void DelegadoCambioLista(object sender, EventArgs e);
 
     public class Cartuchera<T> where T : Util
@@ -22,7 +21,6 @@ namespace Biblioteca
         private List<T> listaElementos;
 
         public static event DelegadoPrecio EventoPrecio;
-        // prueba
         public event DelegadoCambioLista EventoCambioLista;
 
         #region CONSTRUCTORES
