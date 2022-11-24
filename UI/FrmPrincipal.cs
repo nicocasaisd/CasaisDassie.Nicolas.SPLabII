@@ -36,6 +36,7 @@ namespace UI
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
             Cartuchera<Util>.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.EventoCambioLista += EventoCambioLista_Handler;
+            this.EventoCambioLista += ManejadoresDeEventos.EventoCambioLista_HistorialDeAccionesHandler;
         }
 
         
@@ -74,7 +75,7 @@ namespace UI
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
-                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(this.btn_Modificar_Click, elementoSeleccionado));
             }
            
         }
