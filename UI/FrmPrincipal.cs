@@ -65,7 +65,8 @@ namespace UI
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
-                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(MethodBase.GetCurrentMethod().Name, null));
+                string metodoActual = MethodBase.GetCurrentMethod().Name;
+                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(metodoActual, null));
             }
 
         }
@@ -76,10 +77,9 @@ namespace UI
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
-                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(MethodBase.GetCurrentMethod().Name, elementoSeleccionado));
+                string metodoActual = MethodBase.GetCurrentMethod().Name;
+                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(metodoActual, elementoSeleccionado));
             }
-            //string metodo = MethodBase.GetCurrentMethod().Name;
-            //MessageBox.Show(metodo);
 
         }
         private void btn_Eliminar_Click(object sender, EventArgs e)
@@ -89,7 +89,8 @@ namespace UI
                 try
                 {
                     UtilesDAO.EliminarPorId(elementoSeleccionado);
-                    EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(MethodBase.GetCurrentMethod().Name, elementoSeleccionado));
+                    string metodoActual = MethodBase.GetCurrentMethod().Name;
+                    EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(metodoActual, elementoSeleccionado));
                 }
                 catch (DataAccessObjectException ex)
                 {

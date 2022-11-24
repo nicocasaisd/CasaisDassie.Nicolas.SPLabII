@@ -16,13 +16,9 @@ namespace Biblioteca.Persistencia
 
         public static void EventoCambioLista_HistorialDeAccionesHandler(object sender, EventArgs e)
         {
-            //Action<object, EventArgs> accion = ((EventoCambioListaArgs)e).accion;
             Util util = ((EventoCambioListaArgs)e).util;
             string nombreMetodoActual = ((EventoCambioListaArgs)e).nombreMetodoActual;
 
-            //Action<Action<object, EventArgs>, Util> delegado;
-            //delegado = TicketManager.EscribirHistorialDeAcciones;
-            //Task hilo = new Task();
             TicketManager.EscribirHistorialDeAcciones(nombreMetodoActual, util);
         }
 
