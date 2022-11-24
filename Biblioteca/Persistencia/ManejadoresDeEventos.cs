@@ -59,6 +59,7 @@ namespace Biblioteca.Persistencia
         public EventoSinTinta(int tintaFaltante, Util util) : base()
         {
             this.tintaFaltante = tintaFaltante;
+            this.util = util;
         }
 
     }

@@ -31,7 +31,7 @@ namespace Biblioteca
 		}
 
 
-		public void Resaltar(int cantidad)
+		public int Resaltar(int cantidad)
 		{
 			if(tinta >= cantidad)
 			{
@@ -42,6 +42,8 @@ namespace Biblioteca
 			{
 				throw new SinTintaException();
 			}
+
+			return  cantidad - this.tinta;
 		}
 
 		

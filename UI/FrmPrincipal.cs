@@ -254,13 +254,16 @@ namespace UI
         {
             cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
 
-            Fibron fibronRojo = new Fibron(30, EColorLapiz.Rojo);
-            Fibron fibronVerde = new Fibron(20, EColorLapiz.Verde);
+            Fibron fibronRojo = new Fibron(10, EColorLapiz.Rojo);
+            Fibron fibronVerde = new Fibron(10, EColorLapiz.Verde);
             Fibron fibronAzul = new Fibron(10, EColorLapiz.Azul);
 
             cartucheraFibrones.ListaElementos.Add(fibronRojo);
             cartucheraFibrones.ListaElementos.Add(fibronVerde);
             cartucheraFibrones.ListaElementos.Add(fibronAzul);
+
+            // Suscribo manejador
+            SinTintaEvento += EventoSinTinta_Handler;
         }
 
         private void btn_Resaltar_Click(object sender, EventArgs e)
@@ -269,11 +272,13 @@ namespace UI
             int index = rnd.Next(0, 2);
             int cantidadTinta = rnd.Next(1, 10);
 
+            int tintaFaltante;
+
             Fibron fibron = cartucheraFibrones.ListaElementos[index];
 
             try
             {
-                fibron.Resaltar(cantidadTinta);
+                tintaFaltante = fibron.Resaltar(cantidadTinta);
 
             }
             catch (SinTintaException)
