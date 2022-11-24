@@ -254,9 +254,9 @@ namespace UI
         {
             cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
 
-            Fibron fibronRojo = new Fibron(1, "Rojo", 0, 10, EColorLapiz.Rojo);
-            Fibron fibronVerde = new Fibron(2, "Verde", 0, 10, EColorLapiz.Verde);
-            Fibron fibronAzul = new Fibron(3, "Azul", 0, 10, EColorLapiz.Azul);
+            Fibron fibronRojo = new Fibron(1, "FibronRojo", 0, 10, EColorLapiz.Rojo);
+            Fibron fibronVerde = new Fibron(2, "FibronVerde", 0, 10, EColorLapiz.Verde);
+            Fibron fibronAzul = new Fibron(3, "FibronAzul", 0, 10, EColorLapiz.Azul);
 
             cartucheraFibrones.ListaElementos.Add(fibronRojo);
             cartucheraFibrones.ListaElementos.Add(fibronVerde);
@@ -272,7 +272,7 @@ namespace UI
             int index = rnd.Next(0, 2);
             int cantidadTinta = rnd.Next(1, 10);
 
-            int tintaFaltante;
+            int tintaFaltante = 0;
 
             Fibron fibron = cartucheraFibrones.ListaElementos[index];
 

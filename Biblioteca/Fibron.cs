@@ -51,7 +51,7 @@ namespace Biblioteca
 
         public override string ToString()
         {
-            return $"{this.Id}, {this.Marca}, {this.Precio}, {this.Color}, {this.Tinta}";
+            return $"{this.Id}, {this.Marca}, {this.Color}, {this.Tinta}";
         }
 
     }
