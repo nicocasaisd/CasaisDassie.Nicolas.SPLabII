@@ -43,6 +43,11 @@ namespace UI
             InitializeComponent();
             token = new CancellationToken();
             tokenSource = new CancellationTokenSource();
+            // PARCIAL
+            InicializarFibrones();
+            btn_InstanciarFibrones.Enabled = false;
+            btn_InstanciarFibrones.Visible = false;
+
             
         }
 
@@ -252,18 +257,18 @@ namespace UI
         //PARCIAL
         private void btn_InstanciarFibrones_Click(object sender, EventArgs e)
         {
-            cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
+            //cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
 
-            Fibron fibronRojo = new Fibron(1, "FibronRojo", 0, 10, EColorLapiz.Rojo);
-            Fibron fibronVerde = new Fibron(2, "FibronVerde", 0, 10, EColorLapiz.Verde);
-            Fibron fibronAzul = new Fibron(3, "FibronAzul", 0, 10, EColorLapiz.Azul);
+            //Fibron fibronRojo = new Fibron(1, "FibronRojo", 0, 10, EColorLapiz.Rojo);
+            //Fibron fibronVerde = new Fibron(2, "FibronVerde", 0, 10, EColorLapiz.Verde);
+            //Fibron fibronAzul = new Fibron(3, "FibronAzul", 0, 10, EColorLapiz.Azul);
 
-            cartucheraFibrones.ListaElementos.Add(fibronRojo);
-            cartucheraFibrones.ListaElementos.Add(fibronVerde);
-            cartucheraFibrones.ListaElementos.Add(fibronAzul);
+            //cartucheraFibrones.ListaElementos.Add(fibronRojo);
+            //cartucheraFibrones.ListaElementos.Add(fibronVerde);
+            //cartucheraFibrones.ListaElementos.Add(fibronAzul);
 
-            // Suscribo manejador
-            SinTintaEvento += EventoSinTinta_Handler;
+            //// Suscribo manejador
+            //SinTintaEvento += EventoSinTinta_Handler;
         }
 
         private void InicializarFibrones()
@@ -285,8 +290,8 @@ namespace UI
         private void btn_Resaltar_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            int index = rnd.Next(0, 2);
-            int cantidadTinta = rnd.Next(1, 10);
+            int index = rnd.Next(0, 3);
+            int cantidadTinta = rnd.Next(1, 11);
 
             int tintaFaltante = 0;
 
