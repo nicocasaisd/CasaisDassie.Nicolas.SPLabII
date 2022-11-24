@@ -38,6 +38,9 @@ namespace UI
 
         #endregion
 
+
+        int tintaFaltante;
+
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -293,13 +296,13 @@ namespace UI
             int index = rnd.Next(0, 3);
             int cantidadTinta = rnd.Next(1, 11);
 
-            int tintaFaltante = 0;
+            //int tintaFaltante = 0;
 
             Fibron fibron = cartucheraFibrones.ListaElementos[index];
 
             try
             {
-                tintaFaltante = fibron.Resaltar(cantidadTinta);
+                this.tintaFaltante = fibron.Resaltar(cantidadTinta);
                 MessageBox.Show($"Se gastó {cantidadTinta} en el fibrón {fibron}. \n Tinta restante: {fibron.Tinta}");
 
             }
@@ -307,7 +310,7 @@ namespace UI
             {
                 if(this.SinTintaEvento is not null)
                 {
-                    SinTintaEvento.Invoke(this, new EventoSinTinta(tintaFaltante, fibron));
+                    SinTintaEvento.Invoke(this, new EventoSinTinta(this.tintaFaltante, fibron));
                 }
                
             }
