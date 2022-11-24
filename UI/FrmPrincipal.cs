@@ -312,7 +312,6 @@ namespace UI
                 {
                     SinTintaEvento.Invoke(this, new EventoSinTinta(ex.tintaFaltante, fibron));
                 }
-               
             }
         }
 
