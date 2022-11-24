@@ -12,11 +12,10 @@ namespace Biblioteca.Persistencia
     {
         public static void RealizarBackup(Cartuchera<Util> cartuchera)
         {
-            DateTime dt = DateTime.Now;
-            string dateString = $"{dt.Hour:#2}{dt.Minute:#2}{dt.Second:#2}";
-            string archivo = $"cartuchera{cartuchera.Id_Cartuchera}_{dateString}_backup.json";
+            string archivo = $"cartuchera{cartuchera.Id_Cartuchera}_{DateTime.Now.ToString("HHmmss")}_backup.json";
+            string carpeta = "backup";
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string rutaCompleta = Path.Combine(ruta, archivo);
+            string rutaCompleta = Path.Combine(ruta,carpeta, archivo);
 
 
 

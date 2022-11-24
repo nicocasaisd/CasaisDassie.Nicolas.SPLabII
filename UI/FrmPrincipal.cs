@@ -192,9 +192,18 @@ namespace UI
         {
             while(true)
             {
-                BackupManager.RealizarBackup(cartuchera);
+                try
+                {
+                    BackupManager.RealizarBackup(cartuchera);
+                    tsslbl_mensaje.Text = $"Backup realizado - {DateTime.Now.ToShortTimeString()}";
+                }
+                catch (Exception)
+                {
+                    tsslbl_mensaje.Text = $"Error al realizar backup - {DateTime.Now.ToShortTimeString()}";
+                }
+                
                 Thread.Sleep(30000);
-                tsslbl_mensaje.Text = $"Backup realizado - {DateTime.Now.ToShortTimeString()}";
+                
             }
         }
     }
