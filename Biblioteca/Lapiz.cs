@@ -95,20 +95,6 @@ namespace Biblioteca
             }
         }
 
-        //object IDeserializa.Xml()
-        //{
-        //    string archivo = "lapiz.xml";
-        //    string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        //    string rutaCompleta = Path.Combine(ruta, archivo);
-
-        //    using( StreamReader reader = new StreamReader(rutaCompleta))
-        //    {
-        //        XmlSerializer xmlSerializer = new XmlSerializer(typeof(Lapiz));
-        //        Lapiz lapiz = xmlSerializer.Deserialize(reader) as Lapiz;
-        //        return lapiz;
-        //    }
-        //}
-
         object IDeserializa.Xml()
         {
             string archivo = "lapiz.xml";

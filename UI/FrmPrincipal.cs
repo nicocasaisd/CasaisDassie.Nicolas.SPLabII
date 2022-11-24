@@ -137,6 +137,9 @@ namespace UI
             {
                 MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            // BORRARR
+            BackupManager.RealizarBackup(cartuchera);
         }
 
         private void btn_DeserializarXml_Click(object sender, EventArgs e)
