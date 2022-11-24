@@ -266,6 +266,22 @@ namespace UI
             SinTintaEvento += EventoSinTinta_Handler;
         }
 
+        private void InicializarFibrones()
+        {
+            cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
+
+            Fibron fibronRojo = new Fibron(1, "FibronRojo", 0, 10, EColorLapiz.Rojo);
+            Fibron fibronVerde = new Fibron(2, "FibronVerde", 0, 10, EColorLapiz.Verde);
+            Fibron fibronAzul = new Fibron(3, "FibronAzul", 0, 10, EColorLapiz.Azul);
+
+            cartucheraFibrones.ListaElementos.Add(fibronRojo);
+            cartucheraFibrones.ListaElementos.Add(fibronVerde);
+            cartucheraFibrones.ListaElementos.Add(fibronAzul);
+
+            // Suscribo manejador
+            SinTintaEvento += EventoSinTinta_Handler;
+        }
+
         private void btn_Resaltar_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
