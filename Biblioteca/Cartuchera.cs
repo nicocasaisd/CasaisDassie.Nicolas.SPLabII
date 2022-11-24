@@ -21,7 +21,7 @@ namespace Biblioteca
         private int capacidad;
         private List<T> listaElementos;
 
-        public event DelegadoPrecio EventoPrecio;
+        public static event DelegadoPrecio EventoPrecio;
         // prueba
         public event DelegadoCambioLista EventoCambioLista;
 
@@ -72,9 +72,13 @@ namespace Biblioteca
                 UtilesDAO.GuardarUtil(cartuchera.id_cartuchera, elemento);
                 
             }
-            if(cartuchera.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
+            //if(cartuchera.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
+            //{
+            //    cartuchera.EventoPrecio.Invoke(CartucheraDAO.Leer(), new EventArgs());
+            //}
+            if (Cartuchera<Util>.EventoPrecio is not null && cartuchera.PrecioTotal > 500)
             {
-                cartuchera.EventoPrecio.Invoke(CartucheraDAO.Leer(), new EventArgs());
+                Cartuchera<Util>.EventoPrecio.Invoke(CartucheraDAO.Leer(), new EventArgs());
             }
 
             return false;
