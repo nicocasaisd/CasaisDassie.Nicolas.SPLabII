@@ -21,12 +21,15 @@ namespace UI
 
     public partial class FrmPrincipal : Form
     {
+        #region ATRIBUTOS
         Cartuchera<Util> cartuchera;
         Util elementoSeleccionado;
         public event DelegadoCambioLista EventoCambioLista;
         Task backup;
         CancellationToken token;
         CancellationTokenSource tokenSource;
+
+        #endregion
 
         public FrmPrincipal()
         {
