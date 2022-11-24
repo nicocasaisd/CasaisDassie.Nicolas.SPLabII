@@ -258,5 +258,23 @@ namespace UI
             cartucheraFibrones.ListaElementos.Add(fibronVerde);
             cartucheraFibrones.ListaElementos.Add(fibronAzul);
         }
+
+        private void btn_Resaltar_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(0, 2);
+            int cantidadTinta = rnd.Next(1, 10);
+
+            try
+            {
+                cartucheraFibrones.ListaElementos[index].Resaltar(cantidadTinta);
+
+            }
+            catch (SinTintaException)
+            {
+
+               
+            }
+        }
     }
 }

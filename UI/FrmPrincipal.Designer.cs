@@ -31,6 +31,7 @@
             this.gpb_ListaCartuchera = new System.Windows.Forms.GroupBox();
             this.dgv_ListaCartuchera = new System.Windows.Forms.DataGridView();
             this.gpb_Crud = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.tsslbl_hilo = new System.Windows.Forms.ToolStripStatusLabel();
             this.llb_CancelarBackup = new System.Windows.Forms.LinkLabel();
             this.btn_Resaltar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_InstanciarFibrones = new System.Windows.Forms.Button();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
@@ -103,6 +103,15 @@
             this.gpb_Crud.TabIndex = 1;
             this.gpb_Crud.TabStop = false;
             this.gpb_Crud.Text = "Modificar Lista";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Location = new System.Drawing.Point(454, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // btn_Eliminar
             // 
@@ -281,15 +290,7 @@
             this.btn_Resaltar.TabIndex = 9;
             this.btn_Resaltar.Text = "Resaltar Fibron";
             this.btn_Resaltar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(454, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.btn_Resaltar.Click += new System.EventHandler(this.btn_Resaltar_Click);
             // 
             // btn_InstanciarFibrones
             // 
