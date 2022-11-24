@@ -148,26 +148,7 @@ namespace UI
 
             if (opcion == eModificarProductoOpcion.AgregarProducto)
             {
-
-                if(cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Lapiz)
-                {
-                    EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
-                    bool esMecanico = chb_5.Checked;
-                    Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
-                    _ = cartuchera + lapiz;
-                }
-                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
-                {
-                    bool esBorraTinta = chb_5.Checked;
-                    Goma goma = new Goma(0, marca, precio, esBorraTinta);
-                    _ = cartuchera + goma;
-                }
-                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
-                {
-                    EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
-                    Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
-                    _ = cartuchera + sacapunta;
-                }
+                AgregarUtil(marca, precio);
             }
             else
             {
@@ -202,6 +183,39 @@ namespace UI
             }
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+        }
+
+        private void AgregarUtil(string marca, decimal precio)
+        {
+            try
+            {
+                if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Lapiz)
+                {
+                    EColorLapiz color = (EColorLapiz)cmb_4.SelectedItem;
+                    bool esMecanico = chb_5.Checked;
+                    Lapiz lapiz = new Lapiz(0, marca, precio, color, esMecanico);
+                    _ = cartuchera + lapiz;
+                }
+                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Goma)
+                {
+                    bool esBorraTinta = chb_5.Checked;
+                    Goma goma = new Goma(0, marca, precio, esBorraTinta);
+                    _ = cartuchera + goma;
+                }
+                else if (cmb_tipoDeUtil.SelectedItem is ETipoDeUtil.Sacapunta)
+                {
+                    EMaterialSacapunta material = (EMaterialSacapunta)cmb_4.SelectedItem;
+                    Sacapunta sacapunta = new Sacapunta(0, marca, precio, material);
+                    _ = cartuchera + sacapunta;
+                }
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (CartucheraLlenaException)
+            {
+                MessageBox.Show("La cartuchera ha llegado al máximo de su capacidad.", "Cartuchera Llena.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.DialogResult = DialogResult.Cancel;
+            }
+            
         }
     }
 }
