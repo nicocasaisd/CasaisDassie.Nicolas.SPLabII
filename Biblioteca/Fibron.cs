@@ -39,6 +39,10 @@ namespace Biblioteca
 			{
 
 				this.tinta -= cantidad;
+				if(this.Tinta < 0)
+				{
+					this.Tinta = 0;
+				}
 			}
 			else
 			{
