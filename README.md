@@ -1,5 +1,10 @@
 # TP Segundo Parcial de Laboratorio de Programación II - 2022
 
+Vista de la interfaz de usuario del programa:
+
+![administradorDeCartuchera](https://user-images.githubusercontent.com/76565736/203844840-ff6bc605-a5a0-4b2e-a95a-1bc002b47b92.png)
+
+
 La esctructura del programa se puede ver en los siguientes diagramas de clases:
 
 ![Cartuchera](https://user-images.githubusercontent.com/76565736/203666377-ad2913b4-9d57-4cd0-a75b-a755c0475fdc.png)
