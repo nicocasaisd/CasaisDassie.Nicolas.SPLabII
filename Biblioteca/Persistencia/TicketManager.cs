@@ -37,7 +37,7 @@ namespace Biblioteca.Persistencia
             }
         }
 
-        public static void EscribirHistorialDeAcciones(Action<object, EventArgs> accion, Util util)
+        public static void EscribirHistorialDeAcciones(string nombreMetodoActual, Util util)
         {
             StreamWriter sw = null;
             string rutaHistorial = Path.Combine(ruta, historialDeAcciones);
@@ -45,7 +45,7 @@ namespace Biblioteca.Persistencia
             try
             {
                 sw = new StreamWriter(rutaHistorial, true);
-                sw.WriteLine($"{DateTime.Now} ||\t\t {accion.Method.Name} ||\t\t {util}");
+                sw.WriteLine($"{DateTime.Now} ||\t\t {nombreMetodoActual} ||\t\t {util}");
             }
             catch (Exception)
             {
