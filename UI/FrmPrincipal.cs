@@ -306,11 +306,11 @@ namespace UI
                 MessageBox.Show($"Se gastó {cantidadTinta} en el fibrón {fibron}. \n Tinta restante: {fibron.Tinta}");
 
             }
-            catch (SinTintaException)
+            catch (SinTintaException ex)
             {
                 if(this.SinTintaEvento is not null)
                 {
-                    SinTintaEvento.Invoke(this, new EventoSinTinta(this.tintaFaltante, fibron));
+                    SinTintaEvento.Invoke(this, new EventoSinTinta(ex.tintaFaltante, fibron));
                 }
                
             }

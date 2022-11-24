@@ -46,7 +46,7 @@ namespace Biblioteca
 			}
 			else
 			{
-				throw new SinTintaException();
+				throw new SinTintaException(cantidad - this.tinta);
 			}
 
 			return  cantidad - this.tinta;

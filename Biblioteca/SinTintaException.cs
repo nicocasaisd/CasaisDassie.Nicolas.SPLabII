@@ -8,9 +8,10 @@ namespace Biblioteca
 {
     public class SinTintaException : Exception
     {
-        public SinTintaException(): base()
+        public int tintaFaltante;
+        public SinTintaException(int tintaFaltante) : base()
         {
-
+            this.tintaFaltante = tintaFaltante;
         }
     }
 }
