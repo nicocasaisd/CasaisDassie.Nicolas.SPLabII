@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -38,6 +39,12 @@ namespace UI
             Cartuchera<Util>.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.EventoCambioLista += EventoCambioLista_Handler;
             this.EventoCambioLista += ManejadoresDeEventos.EventoCambioLista_HistorialDeAccionesHandler;
+
+            // Hilo de backup
+            Task backup = Task.Run(RealizarBackupYDormir);
+
+            // strip status llb
+            tsslbl_mensaje.Text = "";
         }
 
         
@@ -138,8 +145,7 @@ namespace UI
                 MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // BORRARR
-            BackupManager.RealizarBackup(cartuchera);
+            
         }
 
         private void btn_DeserializarXml_Click(object sender, EventArgs e)
@@ -179,6 +185,16 @@ namespace UI
                 {
                     MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        public void RealizarBackupYDormir()
+        {
+            while(true)
+            {
+                BackupManager.RealizarBackup(cartuchera);
+                Thread.Sleep(30000);
+                tsslbl_mensaje.Text = $"Backup realizado - {DateTime.Now.ToShortTimeString()}";
             }
         }
     }

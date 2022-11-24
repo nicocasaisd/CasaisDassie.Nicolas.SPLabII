@@ -45,12 +45,15 @@
             this.ofd_Deserializar = new System.Windows.Forms.OpenFileDialog();
             this.lbl_precio = new System.Windows.Forms.Label();
             this.txt_precioTotal = new System.Windows.Forms.TextBox();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.tsslbl_mensaje = new System.Windows.Forms.ToolStripStatusLabel();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
             this.gpb_Tickets.SuspendLayout();
             this.gpb_SerializarXml.SuspendLayout();
             this.gpb_SerializarJson.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpb_ListaCartuchera
@@ -229,11 +232,28 @@
             this.txt_precioTotal.Size = new System.Drawing.Size(100, 23);
             this.txt_precioTotal.TabIndex = 6;
             // 
+            // statusStrip
+            // 
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsslbl_mensaje});
+            this.statusStrip.Location = new System.Drawing.Point(0, 571);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(678, 22);
+            this.statusStrip.TabIndex = 7;
+            this.statusStrip.Text = "Holaaa";
+            // 
+            // tsslbl_mensaje
+            // 
+            this.tsslbl_mensaje.Name = "tsslbl_mensaje";
+            this.tsslbl_mensaje.Size = new System.Drawing.Size(118, 17);
+            this.tsslbl_mensaje.Text = "toolStripStatusLabel1";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 568);
+            this.ClientSize = new System.Drawing.Size(678, 593);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.txt_precioTotal);
             this.Controls.Add(this.lbl_precio);
             this.Controls.Add(this.gpb_SerializarJson);
@@ -251,6 +271,8 @@
             this.gpb_Tickets.PerformLayout();
             this.gpb_SerializarXml.ResumeLayout(false);
             this.gpb_SerializarJson.ResumeLayout(false);
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +297,7 @@
         private System.Windows.Forms.OpenFileDialog ofd_Deserializar;
         private System.Windows.Forms.Label lbl_precio;
         private System.Windows.Forms.TextBox txt_precioTotal;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel tsslbl_mensaje;
     }
 }
