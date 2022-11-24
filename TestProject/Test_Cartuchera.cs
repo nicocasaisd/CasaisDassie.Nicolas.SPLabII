@@ -13,12 +13,13 @@ namespace TestProject
         {
             // Arrange
             Cartuchera<Util> cartuchera = new Cartuchera<Util>(1, 10);
+            decimal esperado = 0;
 
             // Act
-            decimal precio = cartuchera.PrecioTotal;
+            decimal real = cartuchera.PrecioTotal;
 
             // Assert
-            Assert.IsTrue(precio == 0);
+            Assert.IsTrue(real == esperado);
         }
 
 
