@@ -51,6 +51,7 @@
             this.llb_CancelarBackup = new System.Windows.Forms.LinkLabel();
             this.btn_Resaltar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_InstanciarFibrones = new System.Windows.Forms.Button();
             this.gpb_ListaCartuchera.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaCartuchera)).BeginInit();
             this.gpb_Crud.SuspendLayout();
@@ -290,11 +291,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // btn_InstanciarFibrones
+            // 
+            this.btn_InstanciarFibrones.Location = new System.Drawing.Point(485, 426);
+            this.btn_InstanciarFibrones.Name = "btn_InstanciarFibrones";
+            this.btn_InstanciarFibrones.Size = new System.Drawing.Size(137, 56);
+            this.btn_InstanciarFibrones.TabIndex = 10;
+            this.btn_InstanciarFibrones.Text = "Instanciar Fibrones";
+            this.btn_InstanciarFibrones.UseVisualStyleBackColor = true;
+            this.btn_InstanciarFibrones.Click += new System.EventHandler(this.btn_InstanciarFibrones_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 593);
+            this.Controls.Add(this.btn_InstanciarFibrones);
             this.Controls.Add(this.btn_Resaltar);
             this.Controls.Add(this.llb_CancelarBackup);
             this.Controls.Add(this.statusStrip);
@@ -347,5 +359,6 @@
         private System.Windows.Forms.LinkLabel llb_CancelarBackup;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Resaltar;
+        private System.Windows.Forms.Button btn_InstanciarFibrones;
     }
 }

@@ -31,6 +31,9 @@ namespace UI
         CancellationToken token;
         CancellationTokenSource tokenSource;
 
+        // PARCIAL
+        Cartuchera<Fibron> cartucheraFibrones;
+
         #endregion
 
         public FrmPrincipal()
@@ -242,5 +245,18 @@ namespace UI
             this.tokenSource.Cancel();
         }
         #endregion
+
+        private void btn_InstanciarFibrones_Click(object sender, EventArgs e)
+        {
+            cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
+
+            Fibron fibronRojo = new Fibron(30, EColorLapiz.Rojo);
+            Fibron fibronVerde = new Fibron(20, EColorLapiz.Verde);
+            Fibron fibronAzul = new Fibron(10, EColorLapiz.Azul);
+
+            cartucheraFibrones.ListaElementos.Add(fibronRojo);
+            cartucheraFibrones.ListaElementos.Add(fibronVerde);
+            cartucheraFibrones.ListaElementos.Add(fibronAzul);
+        }
     }
 }

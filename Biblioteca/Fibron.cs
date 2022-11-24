@@ -11,6 +11,12 @@ namespace Biblioteca
 		private int tinta;
 		private EColorLapiz color;
 
+		public Fibron(int tinta, EColorLapiz color)
+		{
+			this.tinta = tinta;
+			this.color = color;
+		}
+
 		public EColorLapiz Color
 		{
 			get { return color; }
@@ -37,5 +43,7 @@ namespace Biblioteca
 				throw new SinTintaException();
 			}
 		}
+
+		
 	}
 }
