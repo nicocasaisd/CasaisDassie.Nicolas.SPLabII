@@ -51,5 +51,17 @@ namespace Biblioteca.Persistencia
         }
     }
 
+    public class EventoSinTinta : EventArgs
+    {
+        public int tintaFaltante;
+        public Util util;
+
+        public EventoSinTinta(int tintaFaltante, Util util) : base()
+        {
+            this.tintaFaltante = tintaFaltante;
+        }
+
+    }
+
 
 }

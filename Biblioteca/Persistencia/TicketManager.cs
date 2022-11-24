@@ -89,6 +89,29 @@ namespace Biblioteca.Persistencia
             }
         }
 
+        public static void EscribirErrores(int tintaFaltante, Util util)
+        {
+            StreamWriter sw = null;
+            string rutaErrores = Path.Combine(ruta, "errores.log");
+
+            try
+            {
+                sw = new StreamWriter(rutaErrores, true);
+                sw.WriteLine($"{DateTime.Now} ||\t\t Tinta faltante: {tintaFaltante} ||\t\t Fibron: {util}");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sw is not null)
+                {
+                    sw.Close();
+                }
+            }
+        }
+
 
     }
 }

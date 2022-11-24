@@ -18,6 +18,7 @@ using Interfaces;
 namespace UI
 {
     public delegate void DelegadoCambioLista(object sender, EventArgs e);
+    public delegate void DelegadoSinTinta(object sender, EventArgs e);
 
     public partial class FrmPrincipal : Form
     {
@@ -33,6 +34,7 @@ namespace UI
 
         // PARCIAL
         Cartuchera<Fibron> cartucheraFibrones;
+        public event DelegadoSinTinta SinTintaEvento;
 
         #endregion
 
@@ -246,6 +248,8 @@ namespace UI
         }
         #endregion
 
+
+        //PARCIAL
         private void btn_InstanciarFibrones_Click(object sender, EventArgs e)
         {
             cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
@@ -265,16 +269,32 @@ namespace UI
             int index = rnd.Next(0, 2);
             int cantidadTinta = rnd.Next(1, 10);
 
+            Fibron fibron = cartucheraFibrones.ListaElementos[index];
+
             try
             {
-                cartucheraFibrones.ListaElementos[index].Resaltar(cantidadTinta);
+                fibron.Resaltar(cantidadTinta);
 
             }
             catch (SinTintaException)
             {
-
+                if(this.SinTintaEvento is not null)
+                {
+                    SinTintaEvento.Invoke(this, new EventoSinTinta(1, fibron));
+                }
                
             }
+        }
+
+        // Manejador
+        private void EventoSinTinta_Handler(object sender, EventArgs e)
+        {
+
+            Util util = ((EventoSinTinta)e).util;
+            int tintaFaltante = ((EventoSinTinta)e).tintaFaltante;
+
+            TicketManager.EscribirErrores(tintaFaltante, util);
+            MessageBox.Show("Se escribio el error en errors.log");
         }
     }
 }
