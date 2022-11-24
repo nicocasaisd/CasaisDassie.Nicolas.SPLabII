@@ -29,7 +29,7 @@ namespace Biblioteca
             this.tipo = ETipoDeUtil.Lapiz;
         }
 
-
+        #region PROPIEDADES
         public EColorLapiz Color
         {
             get { return color; }
@@ -41,6 +41,7 @@ namespace Biblioteca
             get { return esMecanico; }
             set { esMecanico = value; }
         }
+        #endregion
 
         public override string ToString()
         {

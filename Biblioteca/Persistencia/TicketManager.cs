@@ -14,6 +14,10 @@ namespace Biblioteca.Persistencia
         static string ruta = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         static string rutaCompleta = Path.Combine(ruta, archivo);
 
+        /// <summary>
+        /// Escribe en el ticket de la cartuchera en el archivo tickets.log en Mis Documentos
+        /// </summary>
+        /// <param name="cartuchera"></param>
         public static void EscribirTicket(Cartuchera<Util> cartuchera)
         {
             StreamWriter sw = null;
@@ -23,29 +27,6 @@ namespace Biblioteca.Persistencia
                 sw = new StreamWriter(rutaCompleta, true);
                 sw.WriteLine(DateTime.Now);
                 sw.WriteLine(cartuchera);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (sw is not null)
-                {
-                    sw.Close();
-                }
-            }
-        }
-
-        public static void EscribirHistorialDeAcciones(string nombreMetodoActual, Util util)
-        {
-            StreamWriter sw = null;
-            string rutaHistorial = Path.Combine(ruta, historialDeAcciones);
-
-            try
-            {
-                sw = new StreamWriter(rutaHistorial, true);
-                sw.WriteLine($"{DateTime.Now} ||\t\t {nombreMetodoActual} ||\t\t {util}");
             }
             catch (Exception)
             {
@@ -79,5 +60,35 @@ namespace Biblioteca.Persistencia
 
             return ticket;
         }
+
+        /// <summary>
+        /// Escribe la accion en el archivo historial_de_acciones.log en Mis Documentos.
+        /// </summary>
+        /// <param name="nombreMetodoActual"></param>
+        /// <param name="util"></param>
+        public static void EscribirHistorialDeAcciones(string nombreMetodoActual, Util util)
+        {
+            StreamWriter sw = null;
+            string rutaHistorial = Path.Combine(ruta, historialDeAcciones);
+
+            try
+            {
+                sw = new StreamWriter(rutaHistorial, true);
+                sw.WriteLine($"{DateTime.Now} ||\t\t {nombreMetodoActual} ||\t\t {util}");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (sw is not null)
+                {
+                    sw.Close();
+                }
+            }
+        }
+
+
     }
 }

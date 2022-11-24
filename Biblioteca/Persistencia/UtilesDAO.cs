@@ -23,6 +23,11 @@ namespace Biblioteca.Persistencia
             comando.Connection = conexion;
         }
 
+        /// <summary>
+        /// Devuelve una lista de lapices de la base de datos
+        /// </summary>
+        /// <param name="id_cartuchera"></param>
+        /// <returns></returns>
         public static List<Lapiz> LeerLapices(int id_cartuchera)
         {
             List<Lapiz> listaLapices = new List<Lapiz>();
@@ -61,6 +66,11 @@ namespace Biblioteca.Persistencia
             return listaLapices;
         }
 
+        /// <summary>
+        /// Devuelve una lista de gomas de la base de datos
+        /// </summary>
+        /// <param name="id_cartuchera"></param>
+        /// <returns></returns>
         public static List<Goma> LeerGomas(int id_cartuchera)
         {
             List<Goma> listaGomas = new List<Goma>();
@@ -99,6 +109,11 @@ namespace Biblioteca.Persistencia
             return listaGomas;
         }
 
+        /// <summary>
+        /// Devuelve una lista de sacapuntas de la base de datos
+        /// </summary>
+        /// <param name="id_cartuchera"></param>
+        /// <returns></returns>
         public static List<Sacapunta> LeerSacapuntas(int id_cartuchera)
         {
             List<Sacapunta> listaSacapuntas = new List<Sacapunta>();
@@ -136,6 +151,11 @@ namespace Biblioteca.Persistencia
             return listaSacapuntas;
         }
 
+        /// <summary>
+        /// Guarda el útil en la tabla de base de datos correspondiente
+        /// </summary>
+        /// <param name="id_cartuchera"></param>
+        /// <param name="util"></param>
         public static void GuardarUtil(int id_cartuchera, Util util)
         {
 
@@ -188,9 +208,12 @@ namespace Biblioteca.Persistencia
 
         }
 
+        /// <summary>
+        /// Modifica el util en la tabla correspondiente de la base de datos.
+        /// </summary>
+        /// <param name="util"></param>
         public static void ModificarUtil(Util util)
         {
-
             try
             {
                 conexion.Open();
@@ -241,6 +264,10 @@ namespace Biblioteca.Persistencia
 
         }
 
+        /// <summary>
+        /// Elimina el util en la tabla correspondiente de la base de datos.
+        /// </summary>
+        /// <param name="util"></param>
         public static void EliminarPorId(Util util)
         {
             try

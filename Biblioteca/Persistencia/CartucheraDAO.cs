@@ -23,6 +23,10 @@ namespace Biblioteca.Persistencia
             comando.Connection = conexion;
         }
 
+        /// <summary>
+        /// Lee la cartuchera de la base de datos, carga todos los útiles y la devuelve.
+        /// </summary>
+        /// <returns></returns>
         public static Cartuchera<Util> Leer()
         {
             Cartuchera<Util> cartuchera = new Cartuchera<Util>();
@@ -59,7 +63,6 @@ namespace Biblioteca.Persistencia
                 }
             }
 
-            //cartuchera.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             return cartuchera;
         }
 

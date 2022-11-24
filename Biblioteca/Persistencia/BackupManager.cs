@@ -11,6 +11,10 @@ namespace Biblioteca.Persistencia
     public class BackupManager
     {
         
+        /// <summary>
+        /// Realiza un backup de la cartuchera en la carpeta _backup en Mis Documentos. El backup es una serialización json de la cartuchera.
+        /// </summary>
+        /// <param name="cartuchera"></param>
         public static void RealizarBackup(Cartuchera<Util> cartuchera)
         {
             

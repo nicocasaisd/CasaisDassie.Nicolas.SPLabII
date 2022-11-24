@@ -22,6 +22,7 @@ namespace UI
     public partial class FrmPrincipal : Form
     {
         #region ATRIBUTOS
+
         Cartuchera<Util> cartuchera;
         Util elementoSeleccionado;
         public event DelegadoCambioLista EventoCambioLista;
@@ -118,9 +119,13 @@ namespace UI
                     MessageBox.Show(ex.Message);
                 }
             }
-            
         }
 
+        /// <summary>
+        /// Muestra el historial de tickets
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void llb_historialDeTickets_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             
@@ -128,6 +133,7 @@ namespace UI
             frmTickets.Show();
         }
 
+        #region SERIALIZACION
         private void btn_SerializarXml_Click(object sender, EventArgs e)
         {
             try
@@ -158,8 +164,6 @@ namespace UI
             {
                 MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
         }
 
         private void btn_DeserializarXml_Click(object sender, EventArgs e)
@@ -201,6 +205,7 @@ namespace UI
                 }
             }
         }
+        #endregion
 
         #region BACKUP
 

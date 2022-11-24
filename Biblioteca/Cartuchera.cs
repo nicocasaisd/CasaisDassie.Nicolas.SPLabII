@@ -25,7 +25,7 @@ namespace Biblioteca
         // prueba
         public event DelegadoCambioLista EventoCambioLista;
 
-
+        #region CONSTRUCTORES
         public Cartuchera()
         {}
 
@@ -35,7 +35,9 @@ namespace Biblioteca
             this.capacidad = capacidad;
             listaElementos = new List<T>();
         }
+        #endregion
 
+        #region PROPIEDADES
         public int Id_Cartuchera
         {
             get { return this.id_cartuchera; }
@@ -49,6 +51,7 @@ namespace Biblioteca
         {
             get { return CalcularPrecioTotal(listaElementos); }
         }
+        #endregion
 
         private decimal CalcularPrecioTotal(List<T> lista)
         {
