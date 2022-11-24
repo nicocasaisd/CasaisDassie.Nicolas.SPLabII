@@ -152,16 +152,30 @@ namespace UI
             }
             else
             {
+                ModificarUtil(marca, precio);
+            }
+
+            this.Close();
+        }
+
+        /// <summary>
+        /// Modifica el util en la base de datos
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="precio"></param>
+        private void ModificarUtil(string marca, decimal precio)
+        {
+            try
+            {
                 if (elementoSeleccionado is Lapiz)
                 {
                     Lapiz lapiz = (Lapiz)elementoSeleccionado;
                     lapiz.Marca = marca;
                     lapiz.Precio = precio;
                     lapiz.Color = (EColorLapiz)cmb_4.SelectedItem;
-                    lapiz.EsMecanico =  chb_5.Checked;
+                    lapiz.EsMecanico = chb_5.Checked;
 
                     UtilesDAO.ModificarUtil(lapiz);
-                    
                 }
                 else if (elementoSeleccionado is Goma)
                 {
@@ -179,12 +193,21 @@ namespace UI
                     sacapunta.Material = (EMaterialSacapunta)cmb_4.SelectedItem;
                     UtilesDAO.ModificarUtil(sacapunta);
                 }
-
-            }
                 this.DialogResult = DialogResult.OK;
-                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.DialogResult = DialogResult.Cancel;
+            }
+            
         }
 
+        /// <summary>
+        /// Agrega el util a la cartuchera. Si está llena lanza la excepción correspondiente.
+        /// </summary>
+        /// <param name="marca"></param>
+        /// <param name="precio"></param>
         private void AgregarUtil(string marca, decimal precio)
         {
             try
@@ -215,7 +238,10 @@ namespace UI
                 MessageBox.Show("La cartuchera ha llegado al máximo de su capacidad.", "Cartuchera Llena.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.DialogResult = DialogResult.Cancel;
             }
-            
+            catch (Exception)
+            {
+                MessageBox.Show("Ocurrió un error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
