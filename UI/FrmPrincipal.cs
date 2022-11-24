@@ -254,9 +254,9 @@ namespace UI
         {
             cartucheraFibrones = new Cartuchera<Fibron>(2, 10);
 
-            Fibron fibronRojo = new Fibron(10, EColorLapiz.Rojo);
-            Fibron fibronVerde = new Fibron(10, EColorLapiz.Verde);
-            Fibron fibronAzul = new Fibron(10, EColorLapiz.Azul);
+            Fibron fibronRojo = new Fibron(1, "Rojo", 0, 10, EColorLapiz.Rojo);
+            Fibron fibronVerde = new Fibron(2, "Verde", 0, 10, EColorLapiz.Verde);
+            Fibron fibronAzul = new Fibron(3, "Azul", 0, 10, EColorLapiz.Azul);
 
             cartucheraFibrones.ListaElementos.Add(fibronRojo);
             cartucheraFibrones.ListaElementos.Add(fibronVerde);
@@ -279,13 +279,14 @@ namespace UI
             try
             {
                 tintaFaltante = fibron.Resaltar(cantidadTinta);
+                MessageBox.Show($"Se gastó {cantidadTinta} en el fibrón {fibron}. \n Tinta restante: {fibron.Tinta}");
 
             }
             catch (SinTintaException)
             {
                 if(this.SinTintaEvento is not null)
                 {
-                    SinTintaEvento.Invoke(this, new EventoSinTinta(1, fibron));
+                    SinTintaEvento.Invoke(this, new EventoSinTinta(tintaFaltante, fibron));
                 }
                
             }

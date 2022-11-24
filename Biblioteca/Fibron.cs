@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Biblioteca
@@ -11,8 +12,9 @@ namespace Biblioteca
 		private int tinta;
 		private EColorLapiz color;
 
-		public Fibron(int tinta, EColorLapiz color)
-		{
+		public Fibron(int id, string marca, decimal precio, int tinta, EColorLapiz color) :base(id, marca, precio)
+
+        {
 			this.tinta = tinta;
 			this.color = color;
 		}
@@ -46,6 +48,11 @@ namespace Biblioteca
 			return  cantidad - this.tinta;
 		}
 
-		
-	}
+
+        public override string ToString()
+        {
+            return $"{this.Id}, {this.Marca}, {this.Precio}, {this.Color}, {this.Tinta}";
+        }
+
+    }
 }
