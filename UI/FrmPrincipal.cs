@@ -303,7 +303,7 @@ namespace UI
             try
             {
                 this.tintaFaltante = fibron.Resaltar(cantidadTinta);
-                MessageBox.Show($"Se gastó {cantidadTinta} en el fibrón {fibron}. \n Tinta restante: {fibron.Tinta}");
+                MessageBox.Show($"Se gastó {cantidadTinta} en el fibrón {fibron}. \n Tinta restante: {fibron.Tinta}", "Resaltado.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             catch (SinTintaException ex)
