@@ -45,10 +45,12 @@ namespace UI
             cartuchera = CartucheraDAO.Leer();
             this.dgv_ListaCartuchera.DataSource = cartuchera.ListaElementos;
             this.txt_precioTotal.Text = cartuchera.PrecioTotal.ToString();
+            
+            // Eventos
             Cartuchera<Util>.EventoPrecio += ManejadoresDeEventos.EventoPrecio_Handler;
             this.EventoCambioLista += EventoCambioLista_Handler;
             this.EventoCambioLista += ManejadoresDeEventos.EventoCambioLista_HistorialDeAccionesHandler;
-
+            
             // Hilo de backup
             backup = Task.Run(RealizarBackupYDormir, this.token);
             Task estadoDeBackup = Task.Run(InformarEstadoDeHilo);
@@ -200,6 +202,8 @@ namespace UI
             }
         }
 
+        #region BACKUP
+
         public void RealizarBackupYDormir()
         {
             while(!tokenSource.IsCancellationRequested)
@@ -232,5 +236,6 @@ namespace UI
         {
             this.tokenSource.Cancel();
         }
+        #endregion
     }
 }

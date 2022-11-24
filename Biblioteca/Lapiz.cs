@@ -47,6 +47,7 @@ namespace Biblioteca
             return $"{this.Id}, {this.Marca}, {this.Precio}, {this.Color}, {this.EsMecanico}";
         }
 
+        #region INTERFACES SERIALIZACION
         void ISerializa.Json()
         {
             string archivo = $"lapiz_{this.Id}_{this.Marca}.json";
@@ -118,5 +119,6 @@ namespace Biblioteca
                 return lapiz;
             }
         }
+        #endregion
     }
 }
