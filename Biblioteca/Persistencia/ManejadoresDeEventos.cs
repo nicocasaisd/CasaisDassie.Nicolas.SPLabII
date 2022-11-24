@@ -16,7 +16,13 @@ namespace Biblioteca.Persistencia
 
         public static void EventoCambioLista_HistorialDeAccionesHandler(object sender, EventArgs e)
         {
-            TicketManager.EscribirHistorialDeAcciones(((EventoCambioListaArgs)e).accion, ((EventoCambioListaArgs)e).util);
+            Action<object, EventArgs> accion = ((EventoCambioListaArgs)e).accion;
+            Util util = ((EventoCambioListaArgs)e).util;
+
+            Action<Action<object, EventArgs>, Util> delegado;
+            delegado = TicketManager.EscribirHistorialDeAcciones;
+            //Task hilo = new Task();
+            TicketManager.EscribirHistorialDeAcciones(accion, util);
         }
 
     }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -77,7 +78,9 @@ namespace UI
             {
                 EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(this.btn_Modificar_Click, elementoSeleccionado));
             }
-           
+            string metodo = MethodBase.GetCurrentMethod().Name;
+            MessageBox.Show(metodo);
+
         }
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
