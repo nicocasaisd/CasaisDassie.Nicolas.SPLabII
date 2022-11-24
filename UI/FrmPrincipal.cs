@@ -64,7 +64,7 @@ namespace UI
             frmModificar.ShowDialog();
             if (frmModificar.DialogResult == DialogResult.OK)
             {
-                EventoCambioLista.Invoke(cartuchera, new EventArgs());
+                EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(this.btn_Agregar_Click, null));
             }
 
         }
@@ -86,7 +86,7 @@ namespace UI
                 try
                 {
                     UtilesDAO.EliminarPorId(elementoSeleccionado);
-                    EventoCambioLista.Invoke(cartuchera, new EventArgs());
+                    EventoCambioLista.Invoke(cartuchera, new EventoCambioListaArgs(this.btn_Eliminar_Click, elementoSeleccionado));
                 }
                 catch (DataAccessObjectException ex)
                 {
