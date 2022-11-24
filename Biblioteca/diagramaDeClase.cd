@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Biblioteca.Lapiz">
+    <Position X="1.75" Y="4" Width="1.5" />
+    <InheritanceLine Type="Biblioteca.Util" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="4.75" Y="3.661" />
+        <Point X="4.75" Y="3.911" />
+        <Point X="4.25" Y="3.911" />
+        <Point X="4.25" Y="3.625" />
+        <Point X="2.5" Y="3.625" />
+        <Point X="2.5" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAgEAAAAAAAAAAAAAAGAIAABgAEAAAA=</HashCode>
+      <FileName>Lapiz.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Biblioteca.Util">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBBAAAAAQAAAAAAAAAAAQAAAAEAAAAAAAAAAAAgQ=</HashCode>
+      <FileName>Util.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Goma">
+    <Position X="5.25" Y="4" Width="1.5" />
+    <InheritanceLine Type="Biblioteca.Util" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="3.661" />
+        <Point X="5.25" Y="3.808" />
+        <Point X="6" Y="3.808" />
+        <Point X="6" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEABAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Goma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Biblioteca.Sacapunta">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <InheritanceLine Type="Biblioteca.Util" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="5" Y="3.661" />
+        <Point X="5" Y="3.808" />
+        <Point X="8.5" Y="3.808" />
+        <Point X="8.5" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Sacapunta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Interfaces.IDeserializa">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Interfaces.ISerializa">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Biblioteca.EColorLapiz" Collapsed="true">
+    <Position X="1.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAAAAAAAAEAAAQAAAAAAAAAAAAQAAAAACAAAAA=</HashCode>
+      <FileName>Lapiz.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Biblioteca.ETipoDeUtil" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABAAAAAIAA=</HashCode>
+      <FileName>Util.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Biblioteca.EMaterialSacapunta" Collapsed="true">
+    <Position X="7.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Sacapunta.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
