@@ -321,7 +321,7 @@ namespace UI
             int tintaFaltante = ((EventoSinTinta)e).tintaFaltante;
 
             TicketManager.EscribirErrores(tintaFaltante, util);
-            MessageBox.Show("Se escribio el error en errors.log");
+            MessageBox.Show($"Falto tinta en {util.Marca}. \n Se escribio el error en errors.log");
         }
     }
 }
